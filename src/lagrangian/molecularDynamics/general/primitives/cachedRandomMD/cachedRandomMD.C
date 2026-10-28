@@ -25,6 +25,30 @@ License
 
 #include "cachedRandomMD.H"
 #include "OSspecific.H"
+#include <cstdlib>
+
+// * * * * * * * * * * * * * * * Local Functions * * * * * * * * * * * * * * //
+
+// osRandomSeed/osRandomInteger/osRandomDouble were removed from OSspecific
+// after OpenFOAM v1706. These reproduce the drand48-based POSIX versions they
+// wrapped on Linux, so random sequences are unchanged.
+namespace
+{
+    inline void osRandomSeed(const Foam::label seed)
+    {
+        ::srand48(seed);
+    }
+
+    inline Foam::label osRandomInteger()
+    {
+        return ::lrand48();
+    }
+
+    inline Foam::scalar osRandomDouble()
+    {
+        return ::drand48();
+    }
+}
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
