@@ -83,8 +83,12 @@ bool Foam::functionObjects::particleDistribution::read(const dictionary& dict)
         dict.lookup("cloud") >> cloudName_;
         dict.lookup("nameVsBinWidth") >> nameVsBinWidth_;
         dict.readIfPresent("tagField", tagFieldName_);
-        word format(dict.lookup("setFormat"));
-        writerPtr_ = writer<scalar>::New(format);
+        const word setFormat(dict.get<word>("setFormat"));
+        writerPtr_ = coordSetWriter::New
+        (
+            setFormat,
+            dict.subOrEmptyDict("formatOptions").optionalSubDict(setFormat)
+        );
 
         Info<< type() << " " << name() << " output:" << nl
             << "    Processing cloud : " << cloudName_ << nl
@@ -207,31 +211,20 @@ void Foam::functionObjects::particleDistribution::generateDistribution
         rndGen_
     );
 
-    const Field<scalar> distX(distribution.x());
-    const Field<scalar> distY(distribution.y());
+    Field<scalar> distX(distribution.x());
+    Field<scalar> distY(distribution.y());
 
     pointField xBin(distX.size(), Zero);
-    xBin.replace(0, distX);
-    const coordSet coords
-    (
-        fName,
-        "x",
-        xBin,
-        distX
-    );
+    xBin.replace(vector::X, distX);
 
-    const wordList fieldNames(1, fName);
+    const coordSet coords(fName, "x", std::move(xBin), std::move(distX));
 
-    fileName outputPath(baseTimeDir());
-    mkDir(outputPath);
-    OFstream graphFile(outputPath/writerPtr_->getFileName(coords, fieldNames));
+    writerPtr_->open(coords, baseTimeDir() / fName);
+    fileName outFile = writerPtr_->write(fName, distY);
+    writerPtr_->close(true);
 
-    Log << "    Writing distribution of " << fieldName
-        << " to " << graphFile.name() << endl;
-
-    List<const scalarField*> yPtrs(1);
-    yPtrs[0] = &distY;
-    writerPtr_->write(coords, fieldNames, yPtrs, graphFile);
+    Log << "    Wrote distribution of " << fieldName
+        << " to " << time_.relativePath(outFile) << endl;
 }
 
 

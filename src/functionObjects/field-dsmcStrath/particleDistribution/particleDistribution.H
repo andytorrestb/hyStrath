@@ -75,7 +75,7 @@ SourceFiles
 #include "scalarField.H"
 #include "Random.H"
 #include "Tuple2.H"
-#include "writer.H"
+#include "coordSetWriter.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -110,7 +110,7 @@ protected:
         Random rndGen_;
 
         //- Writer
-        autoPtr<writer<scalar>> writerPtr_;
+        autoPtr<coordSetWriter> writerPtr_;
 
 
     // Protected Member Functions
