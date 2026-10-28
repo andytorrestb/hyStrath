@@ -2724,7 +2724,7 @@ void Foam::dsmcCloud::shockReset()
     label nDsmcParticles = this->size();
     reduce(nDsmcParticles, sumOp<label>());
 
-    const IOdictionary& shockDict
+    const IOdictionary shockDict
     (
         IOobject
         (
