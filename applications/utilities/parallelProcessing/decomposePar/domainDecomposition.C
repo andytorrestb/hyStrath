@@ -362,9 +362,9 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
                         facesInstance(),
                         processorDb
                     ),
-                    xferMove(facesInstancePoints),
-                    xferMove(procFaces),
-                    xferMove(procCells)
+                    std::move(facesInstancePoints),
+                    std::move(procFaces),
+                    std::move(procCells)
                 )
             );
         }
@@ -380,9 +380,9 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
                         facesInstance(),
                         processorDb
                     ),
-                    xferMove(procPoints),
-                    xferMove(procFaces),
-                    xferMove(procCells)
+                    std::move(procPoints),
+                    std::move(procFaces),
+                    std::move(procCells)
                 )
             );
         }
@@ -763,7 +763,7 @@ bool Foam::domainDecomposition::writeDecomposition(const bool decomposeSets)
                     IOobject::NO_WRITE,
                     false
                 ),
-                xferMove(procPoints)
+                std::move(procPoints)
             );
             pointsInstancePoints.write();
         }

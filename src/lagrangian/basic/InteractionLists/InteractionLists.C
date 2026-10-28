@@ -819,9 +819,9 @@ void Foam::InteractionLists<ParticleType>::findExtendedProcBbsInRange
         }
     }
 
-    extendedProcBbsInRange = tmpExtendedProcBbsInRange.xfer();
-    extendedProcBbsTransformIndex = tmpExtendedProcBbsTransformIndex.xfer();
-    extendedProcBbsOrigProc = tmpExtendedProcBbsOrigProc.xfer();
+    extendedProcBbsInRange.transfer(tmpExtendedProcBbsInRange);
+    extendedProcBbsTransformIndex.transfer(tmpExtendedProcBbsTransformIndex);
+    extendedProcBbsOrigProc.transfer(tmpExtendedProcBbsOrigProc);
 }
 
 
@@ -905,8 +905,8 @@ void Foam::InteractionLists<ParticleType>::buildMap
         new mapDistribute
         (
             constructSize,
-            sendMap.xfer(),
-            constructMap.xfer()
+            std::move(sendMap),
+            std::move(constructMap)
         )
     );
 }
