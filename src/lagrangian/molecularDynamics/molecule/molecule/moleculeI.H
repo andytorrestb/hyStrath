@@ -149,7 +149,7 @@ inline Foam::molecule::constantProperties::constantProperties
             );
         }
 
-        if (eigenValues(momOfInertia).x() < VSMALL)
+        if (eigenValues(symm(momOfInertia)).x() < VSMALL)
         {
             FatalErrorIn("molecule::constantProperties::constantProperties")
                 << "An eigenvalue of the inertia tensor is zero, the molecule "
@@ -160,9 +160,9 @@ inline Foam::molecule::constantProperties::constantProperties
         // Normalise the inertia tensor magnitude to avoid SMALL numbers in the
         // components causing problems
 
-        momOfInertia /= eigenValues(momOfInertia).x();
+        momOfInertia /= eigenValues(symm(momOfInertia)).x();
 
-        tensor e = eigenVectors(momOfInertia);
+        tensor e = eigenVectors(symm(momOfInertia));
 
         // Calculate the transformation between the principle axes to the
         // global axes

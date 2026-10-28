@@ -466,7 +466,7 @@ constantMoleculeProperties::constantMoleculeProperties
     //             << endl;
             Info << "momOfInertia (full tensor) = " <<  momOfInertia << endl;
 
-            if (eigenValues(momOfInertia).x() < VSMALL)
+            if (eigenValues(symm(momOfInertia)).x() < VSMALL)
             {
     //             FatalErrorIn("polyMolecule::constantProperties::constantProperties")
     //                 << "An eigenvalue of the inertia tensor is zero, the molecule "
@@ -489,9 +489,9 @@ constantMoleculeProperties::constantMoleculeProperties
                 // Normalise the inertia tensor magnitude to avoid SMALL numbers in the
                 // components causing problems
 
-                momOfInertia /= eigenValues(momOfInertia).x();
+                momOfInertia /= eigenValues(symm(momOfInertia)).x();
 
-                tensor e = eigenVectors(momOfInertia);
+                tensor e = eigenVectors(symm(momOfInertia));
 
 
                 // Calculate the transformation between the principle axes to the
