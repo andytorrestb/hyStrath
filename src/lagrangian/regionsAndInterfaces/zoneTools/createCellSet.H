@@ -31,7 +31,7 @@ void createCellSet
 )
 {
         // Load set to work
-        autoPtr<topoSet> currentSetPtr(NULL);
+        autoPtr<topoSet> currentSetPtr(nullptr);
 
         //- make a back up of the set
 //         backup(mesh, setName, setName + "_old");

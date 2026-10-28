@@ -3,7 +3,7 @@
 //---------------------------------------------------------
 
 dictionary mhdProperties = dictionary::null;
-autoPtr<mhd::mhdModel> mhd(NULL);
+autoPtr<mhd::mhdModel> mhd(nullptr);
 
 if (thermo.found("mhdDictFile"))
 {
