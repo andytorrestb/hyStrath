@@ -219,7 +219,7 @@ int main(int argc, char *argv[])
 
     word mapMethod = meshToMesh::interpolationMethodNames_
     [
-        meshToMesh::imCellVolumeWeight
+        meshToMesh::interpolationMethod::imCellVolumeWeight
     ];
 
     if  (args.optionReadIfPresent("mapMethod", mapMethod))
@@ -235,10 +235,7 @@ int main(int argc, char *argv[])
         meshToMesh::interpolationMethod method =
             meshToMesh::interpolationMethodNames_[mapMethod];
 
-        patchMapMethod = AMIPatchToPatchInterpolation::interpolationMethodToWord
-        (
-            meshToMesh::interpolationMethodAMI(method)
-        );
+        patchMapMethod = meshToMesh::interpolationMethodAMI(method);
     }
 
     // Optionally override
