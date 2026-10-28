@@ -27,6 +27,7 @@ Description
 
 #include "ciliumMotion.H"
 #include "addToRunTimeSelectionTable.H"
+#include <fstream>
 #include "IFstream.H"
 #include "graph.H"
 #include "mathematicalConstants.H"
@@ -94,7 +95,7 @@ ciliumMotion::ciliumMotion
     }
 
     {
-        ifstream file("X.xy");
+        std::ifstream file("X.xy");
 
         if(file.is_open())
         {
@@ -114,7 +115,7 @@ ciliumMotion::ciliumMotion
 //     Info << "x = " << x_ << endl;
 
     {
-        ifstream file("Y.xy");
+        std::ifstream file("Y.xy");
 
         if(file.is_open())
         {

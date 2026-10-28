@@ -27,6 +27,7 @@ Description
 
 #include "ciliumIC.H"
 #include "addToRunTimeSelectionTable.H"
+#include <fstream>
 #include "IFstream.H"
 #include "graph.H"
 
@@ -105,7 +106,7 @@ void ciliumIC::setInitialConfiguration()
 
 
     {
-        ifstream file("X.xy");
+        std::ifstream file("X.xy");
 
         if(file.is_open())
         {
@@ -120,7 +121,7 @@ void ciliumIC::setInitialConfiguration()
 //     Info << "x = " << x_ << endl;
 
     {
-        ifstream file("Y.xy");
+        std::ifstream file("Y.xy");
 
         if(file.is_open())
         {

@@ -27,6 +27,7 @@ Description
 
 #include "polyPDBreader.H"
 #include "addToRunTimeSelectionTable.H"
+#include <fstream>
 #include "IFstream.H"
 #include "graph.H"
 
@@ -132,7 +133,7 @@ void polyPDBreader::setInitialConfiguration()
 
         word name = mdInitialiseDict_.get<word>("pdbFileName");
 
-        ifstream pdbDict(name.c_str());
+        std::ifstream pdbDict(name.c_str());
 
         if (pdbDict.is_open())
         {
