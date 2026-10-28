@@ -9,3 +9,8 @@ lnInclude/
 **/Make/linux*/
 **/Make/darwin*/
 platforms/
+
+# build-v2512.sh #
+##################
+build-v2512-*.log
+.casecheck.*
