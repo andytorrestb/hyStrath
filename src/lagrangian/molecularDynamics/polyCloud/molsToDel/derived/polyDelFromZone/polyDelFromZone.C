@@ -75,7 +75,7 @@ polyDelFromZone::polyDelFromZone
         if (oneSpecie_)
         {
             const List<word>& idList(molCloud_.cP().molIds());
-            const word molId = propsDict_.lookup("molId");
+            const word molId = propsDict_.get<word>("molId");
             molId_ = findIndex(idList, molId);
 
             if(molId_ == -1)

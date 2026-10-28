@@ -51,7 +51,7 @@ void Foam::potential::setSiteIdList(const IOdictionary& moleculePropertiesDict)
 
         const dictionary& molDict(moleculeProperties.subDict(id));
 
-        List<word> siteIdNames = molDict.lookup("siteIds");
+        List<word> siteIdNames = molDict.get<List<word>>("siteIds");
 
         forAll(siteIdNames, sI)
         {
@@ -63,7 +63,7 @@ void Foam::potential::setSiteIdList(const IOdictionary& moleculePropertiesDict)
             }
         }
 
-        List<word> pairPotSiteIds = molDict.lookup("pairPotentialSiteIds");
+        List<word> pairPotSiteIds = molDict.get<List<word>>("pairPotentialSiteIds");
 
         forAll(pairPotSiteIds, sI)
         {
@@ -155,7 +155,7 @@ void Foam::potential::readPotentialDict()
      //************ modified the way removal ordering is done *****/
     if (potentialDict.found("removalOrder"))
     {
-        List<word> remOrd = potentialDict.lookup("removalOrder");
+        List<word> remOrd = potentialDict.get<List<word>>("removalOrder");
 
         DynamicList<label> removalOrder(0);
 

@@ -172,7 +172,7 @@ namespace Foam
 
     void timeVaryingOnlyForcingFunctionController::setProperties()
     {
-        accelerationDirection_ = propsDict_.lookup("accelerationDirection");
+        propsDict_.readEntry("accelerationDirection", accelerationDirection_);
         amplitude_ = readScalar(propsDict_.lookup("amplitude"));
         waveNumber_ = readScalar(propsDict_.lookup("waveNumber"));
         frequency_ = readScalar(propsDict_.lookup("frequency"));

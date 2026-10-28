@@ -81,7 +81,7 @@ polyDensityFadeBounded::polyDensityFadeBounded
     //- select polyMolecule id for insertion
     {
         const List<word>& idList(molCloud_.cP().molIds());
-        const word molId = propsDict_.lookup("molId");
+        const word molId = propsDict_.get<word>("molId");
         molId_ = findIndex(idList, molId);
 
         if(molId_ == -1)
@@ -109,7 +109,7 @@ polyDensityFadeBounded::polyDensityFadeBounded
 
     if (propsDict_.found("distribution"))
     {
-        const word option = propsDict_.lookup("distribution");
+        const word option = propsDict_.get<word>("distribution");
         uniform_ = false;
 
         if(option == "uniform")
@@ -147,8 +147,8 @@ void polyDensityFadeBounded::setBoundBox
 {
     const dictionary& dict(propsDict.subDict(name));
 
-    vector startPoint = dict.lookup("startPoint");
-    vector endPoint = dict.lookup("endPoint");
+    vector startPoint = dict.get<vector>("startPoint");
+    vector endPoint = dict.get<vector>("endPoint");
 
     bb.resetBoundedBox(startPoint, endPoint);
 }
@@ -163,7 +163,7 @@ void polyDensityFadeBounded::initialConfiguration()
     const scalar& massI = molCloud_.cP().mass(molId_);
     molMass_ = massI;
 
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 
     if(propsDict_.found("numberDensity"))
@@ -195,8 +195,8 @@ void polyDensityFadeBounded::initialConfiguration()
 
     // set initial  properties
 
-    const word insertionMethod = propsDict_.lookup("insertionMethod");
-    const word deletionMethod = propsDict_.lookup("deletionMethod");
+    const word insertionMethod = propsDict_.get<word>("insertionMethod");
+    const word deletionMethod = propsDict_.get<word>("deletionMethod");
 
     insertionScheme_.createInitialConfiguration
     (

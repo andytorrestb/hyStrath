@@ -66,8 +66,8 @@ polyDelFromBoundBox::polyDelFromBoundBox
 
     molIds_ = ids.molIds();
 
-    vector startPoint = propsDict_.lookup("startPoint");
-    vector endPoint = propsDict_.lookup("endPoint");
+    vector startPoint = propsDict_.get<vector>("startPoint");
+    vector endPoint = propsDict_.get<vector>("endPoint");
 
     checkBoundBox(box_, startPoint, endPoint);
 

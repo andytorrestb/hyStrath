@@ -136,7 +136,7 @@ void ciliumIC::setInitialConfiguration()
 
 
     //- start point is the fixed point
-    vector startPoint = mdInitialiseDict_.lookup("startPoint");
+    vector startPoint = mdInitialiseDict_.get<vector>("startPoint");
 
 
 

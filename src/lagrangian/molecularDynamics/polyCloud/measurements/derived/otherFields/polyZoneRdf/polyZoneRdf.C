@@ -145,9 +145,9 @@ polyZoneRdf::polyZoneRdf
     setRadii();
 
     const List<word>& idList(molCloud_.cP().molIds());
-    const word molIdA = propsDict_.lookup("molIdA");
+    const word molIdA = propsDict_.get<word>("molIdA");
     molIdA_ = findIndex(idList, molIdA);
-    const word molIdB = propsDict_.lookup("molIdB");
+    const word molIdB = propsDict_.get<word>("molIdB");
     molIdB_ = findIndex(idList, molIdB);
 
     if(molIdA_ == -1)

@@ -262,7 +262,7 @@ void pdDiffuseNeutralisingWallPatch::setProperties()
 
 
     /** Diffuse wall properties **/
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 
     /** Reacton properties **/

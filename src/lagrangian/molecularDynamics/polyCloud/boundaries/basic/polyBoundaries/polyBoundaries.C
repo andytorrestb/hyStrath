@@ -690,7 +690,7 @@ void polyBoundaries::outputResults()
         {
             patchBoundaryList_.clear();
 
-            patchBoundaryList_ = polyBoundariesDict_.lookup("polyPatchBoundaries");
+            polyBoundariesDict_.readEntry("polyPatchBoundaries", patchBoundaryList_);
 
             forAll(patchBoundaryModels_, p)
             {
@@ -704,7 +704,7 @@ void polyBoundaries::outputResults()
         {
             cyclicBoundaryList_.clear();
 
-            cyclicBoundaryList_ = polyBoundariesDict_.lookup("polyCyclicBoundaries");
+            polyBoundariesDict_.readEntry("polyCyclicBoundaries", cyclicBoundaryList_);
 
             forAll(cyclicBoundaryModels_, c)
             {
@@ -718,7 +718,7 @@ void polyBoundaries::outputResults()
         {
             generalBoundaryList_.clear();
 
-            generalBoundaryList_ = polyBoundariesDict_.lookup("polyGeneralBoundaries");
+            polyBoundariesDict_.readEntry("polyGeneralBoundaries", generalBoundaryList_);
 
             forAll(generalBoundaryModels_, g)
             {

@@ -275,9 +275,9 @@ void dsmcDiffuseWallHeatFluxPatch::updateProperties(const dictionary& newDict)
 
 void dsmcDiffuseWallHeatFluxPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
-    resetAtOutputForQ_ = propsDict_.lookup("resetAtOutputForQ");
+    propsDict_.readEntry("resetAtOutputForQ", resetAtOutputForQ_);
 }
 
 } // End namespace Foam

@@ -62,7 +62,7 @@ simpleBins::simpleBins
     nBins_(readLabel(propsDict_.lookup("nBins")))
 {
 
-    const word option = propsDict_.lookup("direction");
+    const word option = propsDict_.get<word>("direction");
 
     if(option == "x")
     {

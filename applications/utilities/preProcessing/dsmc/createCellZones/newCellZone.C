@@ -51,7 +51,7 @@ newCellZone::newCellZone
     cells_()
 {
     
-    const word zoneName = dict.lookup("zoneName");
+    const word zoneName = dict.get<word>("zoneName");
     regionName_ = zoneName;
     
     Info << " -> " << zoneName << endl;
@@ -100,8 +100,8 @@ void newCellZone::setZone()
     
     if (option_ == "boundBox")
     {    
-        vector startPoint = dict_.lookup("startPoint");
-        vector endPoint = dict_.lookup("endPoint");
+        vector startPoint = dict_.get<vector>("startPoint");
+        vector endPoint = dict_.get<vector>("endPoint");
     
         boundedBox bb;
         bb.resetBoundedBox(startPoint, endPoint);
@@ -119,7 +119,7 @@ void newCellZone::setZone()
     
     if (option_ == "elipse")
     {    
-        vector centrePoint = dict_.lookup("centrePoint");
+        vector centrePoint = dict_.get<vector>("centrePoint");
         scalar a = readScalar(dict_.lookup("a"));
         scalar b = readScalar(dict_.lookup("b"));
         scalar c = readScalar(dict_.lookup("c"));
@@ -141,7 +141,7 @@ void newCellZone::setZone()
     
     if (option_ == "outsideElipse")
     {    
-        vector centrePoint = dict_.lookup("centrePoint");
+        vector centrePoint = dict_.get<vector>("centrePoint");
         scalar a = readScalar(dict_.lookup("a"));
         scalar b = readScalar(dict_.lookup("b"));
         scalar c = readScalar(dict_.lookup("c"));

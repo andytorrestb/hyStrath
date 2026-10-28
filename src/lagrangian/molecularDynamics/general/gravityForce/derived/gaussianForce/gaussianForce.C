@@ -89,7 +89,7 @@ gaussianForce::gaussianForce
 
         if(output)
         {
-            const word fieldName = propsDict_.lookup("fieldName");
+            const word fieldName = propsDict_.get<word>("fieldName");
             scalar nBins = readLabel(propsDict_.lookup("nBins"));
             scalar binWidth = mag(endPoint_ - startPoint_)/(nBins);
 

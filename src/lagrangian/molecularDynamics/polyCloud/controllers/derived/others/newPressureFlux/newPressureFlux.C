@@ -52,8 +52,8 @@ void newPressureFlux::setBoundBox
 {
     const dictionary& dict(propsDict.subDict(name));
 
-    vector startPoint = dict.lookup("startPoint");
-    vector endPoint = dict.lookup("endPoint");
+    vector startPoint = dict.get<vector>("startPoint");
+    vector endPoint = dict.get<vector>("endPoint");
 
     bb.resetBoundedBox(startPoint, endPoint);
 }
@@ -92,7 +92,7 @@ newPressureFlux::newPressureFlux
 
     setBoundBox(propsDict_, box_, "controlBoundBox");
 
-    d_ = propsDict_.lookup("forceDirection");
+    propsDict_.readEntry("forceDirection", d_);
     d_ /= mag(d_);
 
     area_ = readScalar(propsDict_.lookup("area"));

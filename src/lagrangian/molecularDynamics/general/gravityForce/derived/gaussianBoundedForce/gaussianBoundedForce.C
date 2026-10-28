@@ -57,8 +57,8 @@ void gaussianBoundedForce::setBoundBox
 {
     const dictionary& dict(propsDict.subDict(name));
 
-    vector startPoint = dict.lookup("startPoint");
-    vector endPoint = dict.lookup("endPoint");
+    vector startPoint = dict.get<vector>("startPoint");
+    vector endPoint = dict.get<vector>("endPoint");
 
     bb.resetBoundedBox(startPoint, endPoint);
 
@@ -110,7 +110,7 @@ gaussianBoundedForce::gaussianBoundedForce
 
         if(output)
         {
-            const word fieldName = propsDict_.lookup("fieldName");
+            const word fieldName = propsDict_.get<word>("fieldName");
             scalar nBins = readLabel(propsDict_.lookup("nBins"));
             scalar binWidth = mag(endPoint_ - startPoint_)/(nBins);
 

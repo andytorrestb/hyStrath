@@ -60,10 +60,10 @@ polyTemperatureMaxwellDemonInputVelocity::polyTemperatureMaxwellDemonInputVeloci
 
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 
-    vector direction = propsDict_.lookup("velocityDirection");
+    vector direction = propsDict_.get<vector>("velocityDirection");
     direction /= mag(direction);
 
-    const word distributionName = propsDict_.lookup("velocityDistributionName");
+    const word distributionName = propsDict_.get<word>("velocityDistributionName");
 
     fileName timePath(time_.time().system()/distributionName);
 
@@ -222,7 +222,7 @@ void polyTemperatureMaxwellDemonInputVelocity::updateProperties(const dictionary
 
     if (readStateFromFile_)
     {
-        velocity_ = propsDict_.lookup("velocity");
+        propsDict_.readEntry("velocity", velocity_);
 
         forAll(velocities_, c)
         {

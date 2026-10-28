@@ -188,7 +188,7 @@ void dsmcFixedHeatFluxFieldPatch::calculateProperties()
 
             const dictionary& patchNameDict = boundaryIDict.subDict("patchBoundaryProperties");
 
-            const word& patchName = patchNameDict.lookup("patchName");
+            const word& patchName = patchNameDict.get<word>("patchName");
 
             if(patchName == patchName_)
             {
@@ -325,7 +325,7 @@ void dsmcFixedHeatFluxFieldPatch::updateProperties(const dictionary& newDict)
 
 void dsmcFixedHeatFluxFieldPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("initialTemperature"));
     desiredHeatFlux_ = readScalar(propsDict_.lookup("desiredHeatFlux"));
     relaxationFactor_ = readScalar(propsDict_.lookup("relaxationFactor"));

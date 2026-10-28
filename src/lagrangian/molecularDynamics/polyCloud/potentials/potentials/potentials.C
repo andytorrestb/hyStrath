@@ -61,7 +61,7 @@ void potentials::readPotentialDict()
     // removal order in the case of overlaps
     if (potentialsDict.found("removalOrder"))
     {
-        List<word> remOrd = potentialsDict.lookup("removalOrder");
+        List<word> remOrd = potentialsDict.get<List<word>>("removalOrder");
 
         DynamicList<label> removalOrder(0);
 

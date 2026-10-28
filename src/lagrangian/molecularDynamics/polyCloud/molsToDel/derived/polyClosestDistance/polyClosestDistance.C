@@ -56,7 +56,7 @@ polyClosestDistance::polyClosestDistance
 {
 
     {
-        const word molIdName = propsDict_.lookup("molIdToDelete");
+        const word molIdName = propsDict_.get<word>("molIdToDelete");
 
         label molId(findIndex(molCloud_.cP().molIds(), molIdName));
 
@@ -74,7 +74,7 @@ polyClosestDistance::polyClosestDistance
     }
 
     {
-        const word molIdName = propsDict_.lookup("molIdReference");
+        const word molIdName = propsDict_.get<word>("molIdReference");
 
         label molId(findIndex(molCloud_.cP().molIds(), molIdName));
 

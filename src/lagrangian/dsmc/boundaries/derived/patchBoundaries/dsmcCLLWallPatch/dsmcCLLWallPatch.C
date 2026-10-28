@@ -332,7 +332,7 @@ void dsmcCLLWallPatch::updateProperties(const dictionary& newDict)
 
 void dsmcCLLWallPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 }
 

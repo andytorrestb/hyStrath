@@ -177,9 +177,9 @@ void polySimpleLattice::setInitialConfiguration()
 
     const vector startPoint(mdInitialiseDict_.lookup("startPoint"));
 
-    vector lengthVector = mdInitialiseDict_.lookup("lengthVector");
-    vector breadthVector = mdInitialiseDict_.lookup("breadthVector");
-    vector normalVector = mdInitialiseDict_.lookup("thicknessVector");
+    vector lengthVector = mdInitialiseDict_.get<vector>("lengthVector");
+    vector breadthVector = mdInitialiseDict_.get<vector>("breadthVector");
+    vector normalVector = mdInitialiseDict_.get<vector>("thicknessVector");
 
     scalar length = readScalar(mdInitialiseDict_.lookup("length"));
     scalar breadth = readScalar(mdInitialiseDict_.lookup("breadth"));

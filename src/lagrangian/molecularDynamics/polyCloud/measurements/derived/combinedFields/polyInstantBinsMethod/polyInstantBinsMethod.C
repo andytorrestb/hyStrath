@@ -160,7 +160,7 @@ polyInstantBinsMethod::polyInstantBinsMethod
 
     if(overideVolume_)
     {
-        const word name = propsDict_.lookup("volumesFileName");
+        const word name = propsDict_.get<word>("volumesFileName");
 
         fileName timePath(time_.time().system()/name);
 

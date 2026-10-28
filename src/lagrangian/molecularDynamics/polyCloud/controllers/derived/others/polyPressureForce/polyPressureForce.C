@@ -73,7 +73,7 @@ polyPressureForce::polyPressureForce
     molIds_ = ids.molIds();
 
 
-    d_ = propsDict_.lookup("forceDirection");
+    propsDict_.readEntry("forceDirection", d_);
     d_ /= mag(d_);
 
     area_ = readScalar(propsDict_.lookup("area"));

@@ -66,7 +66,7 @@ void Foam::moleculeCloud::buildConstProps()
         const word& id = idList[i];
         const dictionary& molDict = moleculePropertiesDict.subDict(id);
 
-        List<word> siteIdNames = molDict.lookup("siteIds");
+        List<word> siteIdNames = molDict.get<List<word>>("siteIds");
 
         List<label> siteIds(siteIdNames.size());
 

@@ -99,7 +99,7 @@ namespace Foam
 	for(label i = 0;i<pairs.size();i++){
 		if(pairs[i] != "electrostatic")
 		{
-			word pp = pairDict.subDict(pairs[i]).lookup("pairPotential");
+			word pp = pairDict.subDict(pairs[i]).get<word>("pairPotential");
 			if(pp!="noInteraction"){
 				List<word> coeff(pairDict.subDict(pairs[i]).subDict(pp+"Coeffs").toc());
                                 //get the number of coeff's available

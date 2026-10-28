@@ -75,7 +75,7 @@ trackPolyMolecule::trackPolyMolecule
     outputVMDFile_(false)
 {
     const List<word>& idList(molCloud_.pot().idList());
-    const word molId = propsDict_.lookup("molId");
+    const word molId = propsDict_.get<word>("molId");
     molId_ = findIndex(idList, molId);
 
     if(molId_ == -1)

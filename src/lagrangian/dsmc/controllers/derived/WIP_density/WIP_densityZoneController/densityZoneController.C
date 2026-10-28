@@ -643,7 +643,7 @@ void densityZoneController::updateProperties(const dictionary& newDict)
 
 void densityZoneController::setProperties()
 {
-    word typeIdName = propsDict_.lookup("typeId");
+    word typeIdName = propsDict_.get<word>("typeId");
     typeId_ = findIndex(cloud_.typeIdList(), typeIdName);
 
     if(typeId_ == -1)
@@ -654,7 +654,7 @@ void densityZoneController::setProperties()
             << exit(FatalError);
     }
 
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 
     targetParcelDensity_ = readScalar(propsDict_.lookup("massDensity"));

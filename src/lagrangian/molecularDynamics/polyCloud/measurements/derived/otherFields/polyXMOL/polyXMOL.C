@@ -75,7 +75,7 @@ polyXMOL::polyXMOL
     {
         zone_ = true;
 
-        const word regionName = propsDict_.lookup("zoneName");
+        const word regionName = propsDict_.get<word>("zoneName");
         regionName_ = regionName;
 
         const cellZoneMesh& cellZones = mesh_.cellZones();

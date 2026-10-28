@@ -504,7 +504,7 @@ void pdControllers::outputResults()
         {
             stateControllersList_.clear();
 
-            stateControllersList_ = pdControllersDict_.lookup("pdStateControllers");
+            pdControllersDict_.readEntry("pdStateControllers", stateControllersList_);
 
             forAll(stateControllers_, sC)
             {
@@ -518,7 +518,7 @@ void pdControllers::outputResults()
         {
             fluxControllersList_.clear();
 
-            fluxControllersList_ = pdControllersDict_.lookup("pdFluxControllers");
+            pdControllersDict_.readEntry("pdFluxControllers", fluxControllersList_);
 
             forAll(fluxControllers_, fC)
             {

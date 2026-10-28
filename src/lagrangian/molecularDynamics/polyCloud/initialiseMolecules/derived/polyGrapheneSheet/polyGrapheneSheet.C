@@ -74,11 +74,11 @@ void polyGrapheneSheet::setInitialConfiguration()
     // INPUTS
 
     label L = readLabel(mdInitialiseDict_.lookup("length"));
-    vector nL = mdInitialiseDict_.lookup("lengthNormal");
+    vector nL = mdInitialiseDict_.get<vector>("lengthNormal");
     label B = readLabel(mdInitialiseDict_.lookup("breadth"));
-    vector nB = mdInitialiseDict_.lookup("breadthNormal");
+    vector nB = mdInitialiseDict_.get<vector>("breadthNormal");
     scalar b = readScalar(mdInitialiseDict_.lookup("bondLength"));
-    vector startPt = mdInitialiseDict_.lookup("startPoint");
+    vector startPt = mdInitialiseDict_.get<vector>("startPoint");
 
     const reducedUnits& rU = molCloud_.redUnits();
 
@@ -209,7 +209,7 @@ void polyGrapheneSheet::setInitialConfiguration()
 
     if (mdInitialiseDict_.found("bulkVelocity"))
     {
-        bulkVelocity = mdInitialiseDict_.lookup("bulkVelocity");
+        mdInitialiseDict_.readEntry("bulkVelocity", bulkVelocity);
     }
 
     initialiseVelocities_ = false;

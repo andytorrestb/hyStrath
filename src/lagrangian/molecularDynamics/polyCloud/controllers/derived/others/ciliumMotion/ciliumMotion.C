@@ -133,7 +133,7 @@ ciliumMotion::ciliumMotion
    // read in tracking numbers
 
     trackingNumbers_ = List<label>(propsDict_.lookup("trackingNumbers"));
-    startPoint_ = propsDict_.lookup("startPoint");
+    propsDict_.readEntry("startPoint", startPoint_);
 
     deltaTMD_ = time_.deltaT().value();
 

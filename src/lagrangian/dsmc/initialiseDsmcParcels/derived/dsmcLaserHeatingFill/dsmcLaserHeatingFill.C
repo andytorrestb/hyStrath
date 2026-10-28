@@ -99,7 +99,7 @@ void dsmcLaserHeatingFill::setInitialConfiguration()
 
     r0_ = readScalar((dsmcInitialiseDict_.lookup("r0")));
 
-    centrePoint_ = (dsmcInitialiseDict_.lookup("centrePoint"));
+    dsmcInitialiseDict_.readEntry("centrePoint", centrePoint_);
 
     deltaT_ = readScalar((dsmcInitialiseDict_.lookup("axialTemperature")));
 

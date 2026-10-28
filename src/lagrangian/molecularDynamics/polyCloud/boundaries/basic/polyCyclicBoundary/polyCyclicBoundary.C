@@ -58,7 +58,7 @@ polyCyclicBoundary::polyCyclicBoundary
     writeInTimeDir_(true),
     writeInCase_(true)
 {
-    const word patchName = dict.lookup("patchName");
+    const word patchName = dict.get<word>("patchName");
     patchName_ = patchName;
 
     Info << nl << "constructing cyclic boundary: " << patchName << nl << endl;

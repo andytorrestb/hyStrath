@@ -64,7 +64,7 @@ cyclicBoundary::cyclicBoundary
 //     RAB_(tensor::zero),
 //     RBA_(tensor::zero),
 {
-    const word patchName = boundaryDict_.lookup("patchName");
+    const word patchName = boundaryDict_.get<word>("patchName");
     patchName_ = patchName;
 
     Info<< nl << "constructing cyclic boundary: "
@@ -122,14 +122,14 @@ cyclicBoundary::cyclicBoundary
 
     centroid_ /= boundaryPoints_.size();
 
-    nF_ = boundaryDict_.lookup("normal");
+    nF_ = boundaryDict_.get<vector>("normal");
 
     nFaces_ = (readLabel(boundaryDict_.lookup("nFaces")));
 
 
     //- Neighbour patch
 
-    const word neighbPatchName = boundaryDict_.lookup("neighbourPatchName");
+    const word neighbPatchName = boundaryDict_.get<word>("neighbourPatchName");
 
     patchNameN_ = neighbPatchName;
 

@@ -183,7 +183,7 @@ radialBinsNormalised::radialBinsNormalised
 
     if (propsDict_.found("normalVector"))
     {
-        normalVector_ = propsDict_.lookup("normalVector");
+        propsDict_.readEntry("normalVector", normalVector_);
 
         normalVector_ /= mag(normalVector_);
     }

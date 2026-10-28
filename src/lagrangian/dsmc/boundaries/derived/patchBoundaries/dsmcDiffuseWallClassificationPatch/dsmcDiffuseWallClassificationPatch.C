@@ -179,7 +179,7 @@ void dsmcDiffuseWallClassificationPatch::updateProperties(const dictionary& newD
 
 void dsmcDiffuseWallClassificationPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 }
 

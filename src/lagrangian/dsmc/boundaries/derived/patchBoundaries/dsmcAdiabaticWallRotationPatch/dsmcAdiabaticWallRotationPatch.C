@@ -60,8 +60,8 @@ dsmcAdiabaticWallRotationPatch::dsmcAdiabaticWallRotationPatch
 
     wallVelocity_ = readScalar(propsDict_.lookup("velocity"));
     referenceTemperature_ = readScalar(propsDict_.lookup("referenceTemperature"));
-    rotationAxis_ = propsDict_.lookup("rotationAxis");
-    centrePoint_ = propsDict_.lookup("centrePoint");
+    propsDict_.readEntry("rotationAxis", rotationAxis_);
+    propsDict_.readEntry("centrePoint", centrePoint_);
     rotationAxis_ /= mag(rotationAxis_);
 
 

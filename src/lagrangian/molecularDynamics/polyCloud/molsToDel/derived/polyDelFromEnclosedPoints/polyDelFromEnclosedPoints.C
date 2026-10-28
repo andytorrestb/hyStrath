@@ -83,7 +83,7 @@ polyDelFromEnclosedPoints::polyDelFromEnclosedPoints
 
     if (propsDict_.found("translate"))
     {
-        translate = propsDict_.lookup("translate");
+        propsDict_.readEntry("translate", translate);
     }
 
     rotate_ = false;
@@ -103,7 +103,7 @@ polyDelFromEnclosedPoints::polyDelFromEnclosedPoints
 
 
 
-    normal_ = propsDict_.lookup("normal");
+    propsDict_.readEntry("normal", normal_);
 
     points_.setSize(points.size(), vector::zero);
 

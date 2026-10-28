@@ -498,7 +498,7 @@ void polyPlaceMoleculesFromFile::multiIdFixedProperties()
 
     if (mdInitialiseDict_.found("shift"))
     {
-        shift = mdInitialiseDict_.lookup("shift");
+        mdInitialiseDict_.readEntry("shift", shift);
     }
 
     bool tethered = false;

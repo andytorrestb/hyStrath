@@ -63,7 +63,7 @@ polyVelocityBins::polyVelocityBins
 
 //     singleValueController() = true;
 
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
 
     if (propsDict_.found("componentControl"))
     {

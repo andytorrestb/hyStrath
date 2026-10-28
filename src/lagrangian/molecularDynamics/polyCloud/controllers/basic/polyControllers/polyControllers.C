@@ -541,7 +541,7 @@ void polyControllers::outputStateResults()
         {
             stateControllersList_.clear();
 
-            stateControllersList_ = polyControllersDict.lookup("polyStateControllers");
+            polyControllersDict.readEntry("polyStateControllers", stateControllersList_);
 
 //             Info << "updating" << endl;
             forAll(stateControllers_, sC)
@@ -556,7 +556,7 @@ void polyControllers::outputStateResults()
         {
             fluxControllersList_.clear();
 
-            fluxControllersList_ = polyControllersDict.lookup("polyFluxControllers");
+            polyControllersDict.readEntry("polyFluxControllers", fluxControllersList_);
 
             forAll(fluxControllers_, fC)
             {

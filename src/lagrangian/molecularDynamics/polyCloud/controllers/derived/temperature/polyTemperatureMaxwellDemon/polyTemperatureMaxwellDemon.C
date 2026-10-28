@@ -60,7 +60,7 @@ polyTemperatureMaxwellDemon::polyTemperatureMaxwellDemon
 
     velocities_.setSize(controlZone().size(), vector::zero);
 
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
 
     forAll(velocities_, c)
     {
@@ -193,7 +193,7 @@ void polyTemperatureMaxwellDemon::updateProperties(const dictionary& newDict)
 
     if (readStateFromFile_)
     {
-        velocity_ = propsDict_.lookup("velocity");
+        propsDict_.readEntry("velocity", velocity_);
 
         forAll(velocities_, c)
         {

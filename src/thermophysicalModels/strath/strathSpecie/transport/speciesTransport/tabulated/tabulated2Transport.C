@@ -46,8 +46,8 @@ Foam::tabulated2Transport<Thermo>::tabulated2Transport(const dictionary& dict)
 :
     Thermo(dict)
 {
-    word muFile_ = dict.subDict("transport").lookup("muFile");
-    word kappaFile_ = dict.subDict("transport").lookup("kappaFile");
+    word muFile_ = dict.subDict("transport").get<word>("muFile");
+    word kappaFile_ = dict.subDict("transport").get<word>("kappaFile");
     mu_ = interpolation2DTable<scalar>("constant/tabulatedData/" + muFile_);
     //mu_.outOfBounds(interpolation2DTable<scalar>::EXTRAPOLATE);
     kappa_ = interpolation2DTable<scalar>("constant/tabulatedData/" + kappaFile_);

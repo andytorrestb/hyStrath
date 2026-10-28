@@ -346,7 +346,7 @@ void densityController::updateProperties(const dictionary& newDict)
     if(readStateFromFile_)
     {
         density_ = readScalar(propsDict_.lookup("massDensity"));
-        velocity_ = propsDict_.lookup("velocity");
+        propsDict_.readEntry("velocity", velocity_);
         temperature_ = readScalar(propsDict_.lookup("temperature"));
 
         density_ /= (cloud_.constProps(typeId_).mass() * cloud_.nParticle());
@@ -375,7 +375,7 @@ void densityController::setProperties()
 {
     // search for mol id
     const List<word>& idList(cloud_.typeIdList());
-    const word typeId = propsDict_.lookup("typeId");
+    const word typeId = propsDict_.get<word>("typeId");
     typeId_ = findIndex(cloud_.typeIdList(), typeId);
 
     if(typeId_ == -1)

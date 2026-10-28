@@ -50,8 +50,8 @@ void polyDensity::setBoundBox
 {
     const dictionary& dict(propsDict.subDict(name));
 
-    vector startPoint = dict.lookup("startPoint");
-    vector endPoint = dict.lookup("endPoint");
+    vector startPoint = dict.get<vector>("startPoint");
+    vector endPoint = dict.get<vector>("endPoint");
 
     bb.resetBoundedBox(startPoint, endPoint);
 

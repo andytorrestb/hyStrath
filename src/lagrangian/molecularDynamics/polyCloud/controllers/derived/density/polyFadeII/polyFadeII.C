@@ -51,7 +51,7 @@ void polyFadeII::readProperties()
 
     if (propsDict_.found("velocityOption"))
     {
-        const word velocityOption = propsDict_.lookup("velocityOption");
+        const word velocityOption = propsDict_.get<word>("velocityOption");
         velocityOption_ = velocityOption;
 
         if(velocityOption_ == "maxwellian")

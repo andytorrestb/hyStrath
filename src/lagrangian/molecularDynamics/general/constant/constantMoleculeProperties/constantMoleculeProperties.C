@@ -59,7 +59,7 @@ constantMoleculeProperties::constantMoleculeProperties
         )
     );
 
-    List<word> idList = dict.lookup("idList");
+    List<word> idList = dict.get<List<word>>("idList");
 
     N_ = idList.size();
 
@@ -134,9 +134,9 @@ constantMoleculeProperties::constantMoleculeProperties
                 << nl << abort(FatalError);
         }
 
-        const word cloudTypeI = subDict.lookup("cloudType");
+        const word cloudTypeI = subDict.get<word>("cloudType");
         cloudTypes_[i] = cloudTypeI;
-        List<word> siteIdNames = subDict.lookup("siteIds");
+        List<word> siteIdNames = subDict.get<List<word>>("siteIds");
 
         label Nsites = siteIdNames.size();
 
@@ -154,7 +154,7 @@ constantMoleculeProperties::constantMoleculeProperties
 
         // pair potential sites
 
-        List<label> pairIds = subDict.lookup("pairPotentials");
+        List<label> pairIds = subDict.get<List<label>>("pairPotentials");
 
         if(pairIds.size() != Nsites)
         {
@@ -207,7 +207,7 @@ constantMoleculeProperties::constantMoleculeProperties
 
         // site reference positions
 
-        List<vector> siteRefPositions = subDict.lookup("siteReferencePositions");
+        List<vector> siteRefPositions = subDict.get<List<vector>>("siteReferencePositions");
 
         if(siteRefPositions.size() != Nsites)
         {
@@ -233,7 +233,7 @@ constantMoleculeProperties::constantMoleculeProperties
 
         // site masses
 
-        List<scalar> siteMasses = subDict.lookup("siteMasses");
+        List<scalar> siteMasses = subDict.get<List<scalar>>("siteMasses");
 
         if(siteMasses.size() != Nsites)
         {
@@ -259,7 +259,7 @@ constantMoleculeProperties::constantMoleculeProperties
 
         // site charges
 
-        List<scalar> siteCharges = subDict.lookup("siteCharges");
+        List<scalar> siteCharges = subDict.get<List<scalar>>("siteCharges");
 
         if(siteCharges.size() != Nsites)
         {

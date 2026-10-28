@@ -392,7 +392,7 @@ void dsmcFreeStreamInflowPatch::updateProperties(const dictionary& newDict)
 
 void dsmcFreeStreamInflowPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     translationalTemperature_ = readScalar(propsDict_.lookup("translationalTemperature"));
     rotationalTemperature_ = propsDict_.lookupOrDefault<scalar>("rotationalTemperature", 0.0);
     vibrationalTemperature_ = propsDict_.lookupOrDefault<scalar>("vibrationalTemperature", 0.0);

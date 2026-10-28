@@ -487,7 +487,7 @@ void dsmcMassFlowRateInlet::setProperties()
 
     inletTemperature_ = readScalar(propsDict_.lookup("inletTemperature"));
 
-    initialVelocity_ = propsDict_.lookup("initialVelocity");
+    propsDict_.readEntry("initialVelocity", initialVelocity_);
 
 //     theta_ = readScalar(propsDict_.lookup("theta"));
 

@@ -443,15 +443,15 @@ void dsmcChapmanEnskogFreeStreamInflowPatch::updateProperties(const dictionary& 
 
 void dsmcChapmanEnskogFreeStreamInflowPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     translationalTemperature_ = readScalar(propsDict_.lookup("translationalTemperature"));
     rotationalTemperature_ = readScalar(propsDict_.lookup("rotationalTemperature"));
     vibrationalTemperature_ = readScalar(propsDict_.lookup("vibrationalTemperature"));
 
-    shearStressXComponents_ = propsDict_.lookup("shearStressXComponents");
-    shearStressYComponents_ = propsDict_.lookup("shearStressYComponents");
-    shearStressZComponents_ = propsDict_.lookup("shearStressZComponents");
-    heatFlux_ = propsDict_.lookup("heatFlux");
+    propsDict_.readEntry("shearStressXComponents", shearStressXComponents_);
+    propsDict_.readEntry("shearStressYComponents", shearStressYComponents_);
+    propsDict_.readEntry("shearStressZComponents", shearStressZComponents_);
+    propsDict_.readEntry("heatFlux", heatFlux_);
 
     shearStress_.xx() = shearStressXComponents_.x();
     shearStress_.xy() = shearStressXComponents_.y();

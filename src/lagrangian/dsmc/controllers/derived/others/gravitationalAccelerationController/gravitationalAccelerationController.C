@@ -135,7 +135,7 @@ namespace Foam
 
     void gravitationalAccelerationController::setProperties()
     {
-        acceleration_ = propsDict_.lookup("acceleration");
+        propsDict_.readEntry("acceleration", acceleration_);
     }
 }
 

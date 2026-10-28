@@ -42,8 +42,8 @@ addToRunTimeSelectionTable(polyStateController, polyVelocityBounded, dictionary)
 
 void polyVelocityBounded::setBoundBox()
 {
-    vector startPoint = propsDict_.lookup("startPoint");
-    vector endPoint = propsDict_.lookup("endPoint");
+    vector startPoint = propsDict_.get<vector>("startPoint");
+    vector endPoint = propsDict_.get<vector>("endPoint");
 
     bb_.resetBoundedBox(startPoint, endPoint);
 }
@@ -89,7 +89,7 @@ polyVelocityBounded::polyVelocityBounded
 
     molIds_ = ids.molIds();
 
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
 
     if (propsDict_.found("componentControl"))
     {

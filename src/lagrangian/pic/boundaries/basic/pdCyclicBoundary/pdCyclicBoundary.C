@@ -74,7 +74,7 @@ pdCyclicBoundary::pdCyclicBoundary
     writeInCase_(true)
 {
 
-    const word patchName = boundaryDict_.lookup("patchName");
+    const word patchName = boundaryDict_.get<word>("patchName");
     patchName_ = patchName;
 
     //- confirm that the patch exists on the mesh

@@ -198,7 +198,7 @@ void pdFieldProperties::writeFields()
 
         fieldList_.clear();
 
-        fieldList_ = pdFieldPropertiesDict_.lookup("pdFields");
+        pdFieldPropertiesDict_.readEntry("pdFields", fieldList_);
 
         forAll(fields_, f)
         {

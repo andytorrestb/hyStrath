@@ -76,7 +76,7 @@ tail::tail
 //     trackingNumbers_ = List<label>(propsDict_.lookup("trackingNumbers"));
     trackingNumber_ = readLabel(propsDict_.lookup("trackingNumber"));
 
-    centre_ = propsDict_.lookup("centre");
+    propsDict_.readEntry("centre", centre_);
     a_ = readScalar(propsDict_.lookup("a"));
     b_ = readScalar(propsDict_.lookup("b"));
     deltaT_ = readScalar(propsDict_.lookup("deltaT"));
@@ -85,7 +85,7 @@ tail::tail
 
     relaxationTime_ = readScalar(propsDict_.lookup("relaxationTime"));
 
-    startPoint_ = propsDict_.lookup("startPoint");
+    propsDict_.readEntry("startPoint", startPoint_);
     deltaTMD_ = time_.deltaT().value();
 
 

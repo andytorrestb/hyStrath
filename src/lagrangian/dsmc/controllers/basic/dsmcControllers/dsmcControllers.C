@@ -502,7 +502,7 @@ void dsmcControllers::outputResults()
         {
             stateControllersList_.clear();
 
-            stateControllersList_ = dsmcControllersDict_.lookup("dsmcStateControllers");
+            dsmcControllersDict_.readEntry("dsmcStateControllers", stateControllersList_);
 
             forAll(stateControllers_, sC)
             {
@@ -516,7 +516,7 @@ void dsmcControllers::outputResults()
         {
             fluxControllersList_.clear();
 
-            fluxControllersList_ = dsmcControllersDict_.lookup("dsmcFluxControllers");
+            dsmcControllersDict_.readEntry("dsmcFluxControllers", fluxControllersList_);
 
             forAll(fluxControllers_, fC)
             {

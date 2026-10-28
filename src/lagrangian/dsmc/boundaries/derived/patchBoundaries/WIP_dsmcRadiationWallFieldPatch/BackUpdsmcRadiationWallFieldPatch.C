@@ -256,7 +256,7 @@ void dsmcRadiationWallFieldPatch::updateProperties(const dictionary& newDict)
 
 void dsmcRadiationWallFieldPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
     scalar epsilon = readScalar(propsDict_.lookup("emissivity"));
     scalar sigma = readScalar(propsDict_.lookup("stefanBoltzmann"));

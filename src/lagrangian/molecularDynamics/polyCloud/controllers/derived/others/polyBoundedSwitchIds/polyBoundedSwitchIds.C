@@ -86,8 +86,8 @@ polyBoundedSwitchIds::polyBoundedSwitchIds
 
     readProperties();
 
-    vector startPoint = propsDict_.lookup("startPoint");
-    vector endPoint = propsDict_.lookup("endPoint");
+    vector startPoint = propsDict_.get<vector>("startPoint");
+    vector endPoint = propsDict_.get<vector>("endPoint");
     box_.resetBoundedBox(startPoint, endPoint);
 }
 

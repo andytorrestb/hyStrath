@@ -206,7 +206,7 @@ void dsmcFieldProperties::writeFields()
 
         fieldList_.clear();
 
-        fieldList_ = dsmcFieldPropertiesDict_.lookup("dsmcFields");
+        dsmcFieldPropertiesDict_.readEntry("dsmcFields", fieldList_);
 
         forAll(fields_, f)
         {

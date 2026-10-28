@@ -47,7 +47,7 @@ addToRunTimeSelectionTable
 
 void dsmcAdiabaticWallPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("initialTemperature"));
 }
 

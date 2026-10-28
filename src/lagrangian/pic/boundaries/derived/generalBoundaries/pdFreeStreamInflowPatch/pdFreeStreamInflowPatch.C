@@ -405,7 +405,7 @@ void pdFreeStreamInflowPatch::updateProperties(const dictionary& newDict)
 
 void pdFreeStreamInflowPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     translationalTemperature_ = readScalar(propsDict_.lookup("translationalTemperature"));
     rotationalTemperature_ = readScalar(propsDict_.lookup("rotationalTemperature"));
     vibrationalTemperature_ = readScalar(propsDict_.lookup("vibrationalTemperature"));

@@ -84,13 +84,13 @@ polyPDB::polyPDB
 
     if(propsDict_.found("option"))
     {
-        const word option = propsDict_.lookup("option");
+        const word option = propsDict_.get<word>("option");
         option_ = option;
     }
 
     if(option_ == "zone")
     {
-        const word regionName = propsDict_.lookup("zoneName");
+        const word regionName = propsDict_.get<word>("zoneName");
         regionName_ = regionName;
 
         const cellZoneMesh& cellZones = mesh_.cellZones();
@@ -117,15 +117,15 @@ polyPDB::polyPDB
             const entry& boxI = boxList[b];
             const dictionary& dict = boxI.dict();
 
-            vector startPoint = dict.lookup("startPoint");
-            vector endPoint = dict.lookup("endPoint");
+            vector startPoint = dict.get<vector>("startPoint");
+            vector endPoint = dict.get<vector>("endPoint");
             boxes_[b].resetBoundedBox(startPoint, endPoint);
         }
     }
 
     if (propsDict_.found("molOption"))
     {
-        const word molOption = propsDict_.lookup("molOption");
+        const word molOption = propsDict_.get<word>("molOption");
 
         molOption_ = molOption;
     }
@@ -135,7 +135,7 @@ polyPDB::polyPDB
         variableMols_ = Switch(propsDict_.lookup("variableMols"));
 
         nSiteEstimate_ = readLabel(propsDict_.lookup("nSiteEstimate"));
-        rDummy_ = propsDict_.lookup("outsidePosition");
+        propsDict_.readEntry("outsidePosition", rDummy_);
     }
 
 

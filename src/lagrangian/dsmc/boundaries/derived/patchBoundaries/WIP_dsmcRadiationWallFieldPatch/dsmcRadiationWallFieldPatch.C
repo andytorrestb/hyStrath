@@ -260,10 +260,10 @@ void dsmcRadiationWallFieldPatch::updateProperties(const dictionary& newDict)
 
 void dsmcRadiationWallFieldPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
     scalar epsilon = readScalar(propsDict_.lookup("emissivity"));
-    resetFieldsAtOutput_ = propsDict_.lookup("resetAtOutput");
+    propsDict_.readEntry("resetAtOutput", resetFieldsAtOutput_);
 
     epsilonSigma_ = epsilon*physicoChemical::sigma.value();
 

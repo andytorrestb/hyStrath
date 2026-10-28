@@ -69,7 +69,7 @@ oneDimForce::oneDimForce
 {
     forceDirection_ /= mag(forceDirection_);
 
-    const word distributionName = propsDict_.lookup("forceDistributionName");
+    const word distributionName = propsDict_.get<word>("forceDistributionName");
 
 //     fileName timePath(time.path()/distributionName);
     fileName timePath(time_.time().system()/distributionName);
@@ -212,7 +212,7 @@ void oneDimForce::updateProperties
 {
     propsDict_ = dict.subDict(typeName + "Properties");
 
-    const word distributionName = propsDict_.lookup("forceDistributionName");
+    const word distributionName = propsDict_.get<word>("forceDistributionName");
 
 //     fileName timePath(time_.path()/distributionName);
 

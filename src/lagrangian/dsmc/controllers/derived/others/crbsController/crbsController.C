@@ -184,7 +184,7 @@ namespace Foam
 
     void crbsController::setProperties()
     {
-        accelerationDirection_ = propsDict_.lookup("accelerationDirection");
+        propsDict_.readEntry("accelerationDirection", accelerationDirection_);
         waveNumber_ = readScalar(propsDict_.lookup("waveNumber"));
         frequency_ = readScalar(propsDict_.lookup("frequency"));
         referenceTemperature_ = readScalar(propsDict_.lookup("referenceTemperature"));

@@ -75,11 +75,11 @@ void Foam::polyMoleculeCloud::buildConstProps()
 
         const dictionary& molDict(moleculeProperties.subDict(id));
 
-        const word cloudType = molDict.lookup("cloudType");
+        const word cloudType = molDict.get<word>("cloudType");
 
         if(cloudType == "polyMoleculeCloud")
         {
-            List<word> siteIdNames = molDict.lookup("siteIds");
+            List<word> siteIdNames = molDict.get<List<word>>("siteIds");
 
             List<label> siteIds(siteIdNames.size());
 

@@ -91,9 +91,9 @@ void pdInitialiseOnLine::setInitialConfiguration()
 
     const vector velocity(pdInitialiseDict_.lookup("velocity"));
 
-    startPosition_ = (pdInitialiseDict_.lookup("startPosition"));
+    pdInitialiseDict_.readEntry("startPosition", startPosition_);
 
-    endPosition_ = (pdInitialiseDict_.lookup("endPosition"));
+    pdInitialiseDict_.readEntry("endPosition", endPosition_);
 
     scalar lineLength = mag(endPosition_ - startPosition_);
 

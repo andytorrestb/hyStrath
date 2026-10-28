@@ -54,8 +54,8 @@ void polyInstantPropertiesZoneBounded::setBoundBoxes()
         const entry& boxI = boxList[b];
         const dictionary& dict = boxI.dict();
 
-        vector startPoint = dict.lookup("startPoint");
-        vector endPoint = dict.lookup("endPoint");
+        vector startPoint = dict.get<vector>("startPoint");
+        vector endPoint = dict.get<vector>("endPoint");
         boxes_[b].resetBoundedBox(startPoint, endPoint);
     }
 }

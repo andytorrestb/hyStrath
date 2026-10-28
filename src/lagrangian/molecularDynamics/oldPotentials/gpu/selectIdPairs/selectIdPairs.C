@@ -344,7 +344,7 @@ void selectIdPairs::setConfiguration
 
             const dictionary& pairPotentialDict = pairDict.subDict(pairPotentialName);
 
-            const word potentialName = pairPotentialDict.lookup("pairPotential");
+            const word potentialName = pairPotentialDict.get<word>("pairPotential");
 
             if(potentialName == "lennardJones")
             {

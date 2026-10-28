@@ -131,24 +131,21 @@ void polySimpleLatticeZoneMixtures::setInitialConfiguration()
 
     if (mdInitialiseDict_.found("offsetMin"))
     {
-        offsetMin = (mdInitialiseDict_.lookup("offsetMin"));
+        mdInitialiseDict_.readEntry("offsetMin", offsetMin);
     }
 
     vector offsetMax = vector::zero;
 
     if (mdInitialiseDict_.found("offsetMax"))
     {
-        offsetMax = (mdInitialiseDict_.lookup("offsetMax"));
+        mdInitialiseDict_.readEntry("offsetMax", offsetMax);
     }
 
     vector displacement = vector::zero;
 
     if (mdInitialiseDict_.found("displacement"))
     {
-        displacement =
-        (
-            mdInitialiseDict_.lookup("displacement")
-        );
+        mdInitialiseDict_.readEntry("displacement", displacement);
     }
 
     bool displaceOutOfZone = false;

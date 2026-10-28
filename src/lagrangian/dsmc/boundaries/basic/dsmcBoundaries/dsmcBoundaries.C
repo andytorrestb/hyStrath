@@ -844,7 +844,7 @@ void dsmcBoundaries::outputResults()
         {
             patchBoundaryList_.clear();
 
-            patchBoundaryList_ = dsmcBoundariesDict_.lookup("dsmcPatchBoundaries");
+            dsmcBoundariesDict_.readEntry("dsmcPatchBoundaries", patchBoundaryList_);
 
             forAll(patchBoundaryModels_, p)
             {
@@ -858,7 +858,7 @@ void dsmcBoundaries::outputResults()
         {
             cyclicBoundaryList_.clear();
 
-            cyclicBoundaryList_ = dsmcBoundariesDict_.lookup("dsmcCyclicBoundaries");
+            dsmcBoundariesDict_.readEntry("dsmcCyclicBoundaries", cyclicBoundaryList_);
 
             forAll(cyclicBoundaryModels_, c)
             {
@@ -872,7 +872,7 @@ void dsmcBoundaries::outputResults()
         {
             generalBoundaryList_.clear();
 
-            generalBoundaryList_ = dsmcBoundariesDict_.lookup("dsmcGeneralBoundaries");
+            dsmcBoundariesDict_.readEntry("dsmcGeneralBoundaries", generalBoundaryList_);
 
             forAll(generalBoundaryModels_, g)
             {

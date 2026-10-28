@@ -85,9 +85,9 @@ void polyGrapheneSheetPeriodicSkew::setInitialConfiguration()
 
     boundBox box = mesh_.bounds();
 
-    vector nL = mdInitialiseDict_.lookup("lengthNormal");
-    vector nB = mdInitialiseDict_.lookup("breadthNormal");
-    vector nZ = mdInitialiseDict_.lookup("heightNormal");
+    vector nL = mdInitialiseDict_.get<vector>("lengthNormal");
+    vector nB = mdInitialiseDict_.get<vector>("breadthNormal");
+    vector nZ = mdInitialiseDict_.get<vector>("heightNormal");
     scalar Z = readScalar(mdInitialiseDict_.lookup("Z"));
 
     nL /= mag(nL);
@@ -242,7 +242,7 @@ void polyGrapheneSheetPeriodicSkew::setInitialConfiguration()
 
     if (mdInitialiseDict_.found("bulkVelocity"))
     {
-        bulkVelocity = mdInitialiseDict_.lookup("bulkVelocity");
+        mdInitialiseDict_.readEntry("bulkVelocity", bulkVelocity);
     }
 
     initialiseVelocities_ = false;

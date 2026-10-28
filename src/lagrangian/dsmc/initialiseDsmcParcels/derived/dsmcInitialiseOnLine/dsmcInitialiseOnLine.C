@@ -96,9 +96,9 @@ void dsmcInitialiseOnLine::setInitialConfiguration()
 
     const vector velocity(dsmcInitialiseDict_.lookup("velocity"));
 
-    startPosition_ = (dsmcInitialiseDict_.lookup("startPosition"));
+    dsmcInitialiseDict_.readEntry("startPosition", startPosition_);
 
-    endPosition_ = (dsmcInitialiseDict_.lookup("endPosition"));
+    dsmcInitialiseDict_.readEntry("endPosition", endPosition_);
 
     scalar lineLength = mag(endPosition_ - startPosition_);
 

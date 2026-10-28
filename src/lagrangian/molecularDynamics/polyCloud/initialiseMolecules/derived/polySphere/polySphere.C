@@ -115,7 +115,7 @@ void polySphere::setInitialConfiguration()
     if (mdInitialiseDict_.found("hemisphereVector"))
     {
         hemisphere = true;
-        hemisphereVector = mdInitialiseDict_.lookup("hemisphereVector");
+        mdInitialiseDict_.readEntry("hemisphereVector", hemisphereVector);
         hemisphereVector /= mag(hemisphereVector);
     }
 

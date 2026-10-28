@@ -49,7 +49,7 @@ void Foam::domainDecomposition::distributeCells()
     scalarField cellWeights;
     if (method.found("weightField"))
     {
-        word weightName = method.lookup("weightField");
+        word weightName = method.get<word>("weightField");
 
         volScalarField weights
         (

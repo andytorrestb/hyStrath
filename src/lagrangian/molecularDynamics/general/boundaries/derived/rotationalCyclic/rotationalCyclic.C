@@ -76,8 +76,8 @@ rotationalCyclic::rotationalCyclic
             theta_ *= (mathematicalConstant::pi/180.0);
         }
 
-        rotationStartPoint_ = propsDict_.lookup("rotationAxisStartPoint");
-        rotationEndPoint_ = propsDict_.lookup("rotationAxisEndPoint");
+        propsDict_.readEntry("rotationAxisStartPoint", rotationStartPoint_);
+        propsDict_.readEntry("rotationAxisEndPoint", rotationEndPoint_);
 
 
         rotationAxis_ = (rotationEndPoint_ - rotationStartPoint_)

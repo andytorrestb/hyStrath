@@ -121,16 +121,16 @@ void polyPDBreader::setInitialConfiguration()
         Info << "Read positions in zone: " << regionName << endl;
 
         temperature_ = readScalar(mdInitialiseDict_.lookup("temperature"));
-        bulkVelocity_ = mdInitialiseDict_.lookup("bulkVelocity");
+        mdInitialiseDict_.readEntry("bulkVelocity", bulkVelocity_);
 
         if (mdInitialiseDict_.found("frozen"))
         {
             frozen_ = Switch(mdInitialiseDict_.lookup("frozen"));
         }
 
-        startPoint_ = mdInitialiseDict_.lookup("displacement");
+        mdInitialiseDict_.readEntry("displacement", startPoint_);
 
-        word name = mdInitialiseDict_.lookup("pdbFileName");
+        word name = mdInitialiseDict_.get<word>("pdbFileName");
 
         ifstream pdbDict(name.c_str());
 

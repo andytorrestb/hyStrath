@@ -63,7 +63,7 @@ dsmcVibrationalQuantumLevelDistribution::dsmcVibrationalQuantumLevelDistribution
     binWidth_(1),
     distr_(binWidth_)
 {
-    word typeIdName = propsDict_.lookup("typeId");
+    word typeIdName = propsDict_.get<word>("typeId");
     typeId_ = findIndex(cloud_.typeIdList(), typeIdName);
 
     if(typeId_ == -1)

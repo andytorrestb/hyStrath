@@ -91,9 +91,9 @@ void cilium::setInitialConfiguration()
     vector bulkVelocity = vector::zero;
 
     //- start point is the fixed point
-    vector startPoint = mdInitialiseDict_.lookup("startPoint");
+    vector startPoint = mdInitialiseDict_.get<vector>("startPoint");
 
-    vector endPoint = mdInitialiseDict_.lookup("endPoint");
+    vector endPoint = mdInitialiseDict_.get<vector>("endPoint");
 
 
 

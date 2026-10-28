@@ -764,7 +764,7 @@ void pdBoundaries::outputResults()
         {
             patchBoundaryList_.clear();
 
-            patchBoundaryList_ = pdBoundariesDict_.lookup("pdPatchBoundaries");
+            pdBoundariesDict_.readEntry("pdPatchBoundaries", patchBoundaryList_);
 
             forAll(patchBoundaryModels_, p)
             {
@@ -778,7 +778,7 @@ void pdBoundaries::outputResults()
         {
             cyclicBoundaryList_.clear();
 
-            cyclicBoundaryList_ = pdBoundariesDict_.lookup("pdCyclicBoundaries");
+            pdBoundariesDict_.readEntry("pdCyclicBoundaries", cyclicBoundaryList_);
 
             forAll(cyclicBoundaryModels_, c)
             {
@@ -792,7 +792,7 @@ void pdBoundaries::outputResults()
         {
             generalBoundaryList_.clear();
 
-            generalBoundaryList_ = pdBoundariesDict_.lookup("pdGeneralBoundaries");
+            pdBoundariesDict_.readEntry("pdGeneralBoundaries", generalBoundaryList_);
 
             forAll(generalBoundaryModels_, g)
             {

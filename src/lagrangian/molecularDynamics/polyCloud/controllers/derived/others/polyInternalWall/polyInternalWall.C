@@ -79,8 +79,8 @@ polyInternalWall::polyInternalWall
     readProperties();
 
 
-    startPoint_ = propsDict_.lookup("planeMidPoint");
-    normal_ = propsDict_.lookup("planeNormal");
+    propsDict_.readEntry("planeMidPoint", startPoint_);
+    propsDict_.readEntry("planeNormal", normal_);
 
     normal_ /= mag(normal_);
 

@@ -40,7 +40,7 @@ defineTypeNameAndDebug(dsmcCatalyticWallPatch, 0);
 
 void dsmcCatalyticWallPatch::setProperties()
 {
-    velocity_ = propsDict_.lookup("velocity");
+    propsDict_.readEntry("velocity", velocity_);
     temperature_ = readScalar(propsDict_.lookup("temperature"));
 
     // set the molecules/atoms to be catalysed typeIds ------------

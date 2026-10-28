@@ -47,8 +47,8 @@ void polyHydroxylSiO2SurfaceBounded::readInCylinder()
 {
     dictionary propsDict(propsDict_.subDict("punchOutCylinderProperties"));
     radius_ = readScalar(propsDict.lookup("radius"));
-    startPoint_ = propsDict.lookup("startPoint");
-    endPoint_ = propsDict.lookup("endPoint");
+    propsDict.readEntry("startPoint", startPoint_);
+    propsDict.readEntry("endPoint", endPoint_);
     unitVector_ = (endPoint_ - startPoint_)/mag(endPoint_ - startPoint_);
     deltaR_ = readScalar(propsDict.lookup("deltaR"));
 
@@ -58,9 +58,9 @@ void polyHydroxylSiO2SurfaceBounded::readInBoundBox()
 {
     dictionary propsDict(propsDict_.subDict("boundBoxTopSurface"));
 
-    vector startPoint = propsDict.lookup("startPoint");
-    vector endPoint = propsDict.lookup("endPoint");
-    hDirection_ = propsDict.lookup("hDirection");
+    vector startPoint = propsDict.get<vector>("startPoint");
+    vector endPoint = propsDict.get<vector>("endPoint");
+    propsDict.readEntry("hDirection", hDirection_);
     hDirection_ /= molCloud_.redUnits().refLength();
     checkBoundBox(box_, startPoint, endPoint);
 }
@@ -91,9 +91,9 @@ polyHydroxylSiO2SurfaceBounded::polyHydroxylSiO2SurfaceBounded
 
     // set molecule ids
 
-    const word siName = propsDict_.lookup("siliconIdName");
-    const word oName = propsDict_.lookup("oxygenIdName");
-    const word hName = propsDict_.lookup("hydrogenIdName");
+    const word siName = propsDict_.get<word>("siliconIdName");
+    const word oName = propsDict_.get<word>("oxygenIdName");
+    const word hName = propsDict_.get<word>("hydrogenIdName");
 
     const List<word>& idList(molCloud_.pot().idList());
 

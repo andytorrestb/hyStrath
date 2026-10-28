@@ -77,8 +77,8 @@ void polyCNT::setInitialConfiguration()
 
     label N = readLabel(mdInitialiseDict_.lookup("N"));
     label M = readLabel(mdInitialiseDict_.lookup("M"));
-    vector startPoint = mdInitialiseDict_.lookup("startPoint");
-    vector endPoint = mdInitialiseDict_.lookup("endPoint");
+    vector startPoint = mdInitialiseDict_.get<vector>("startPoint");
+    vector endPoint = mdInitialiseDict_.get<vector>("endPoint");
     scalar bondLength = readScalar(mdInitialiseDict_.lookup("bondLengthSI"));
 
     bondLength /= rU.refLength();
@@ -114,7 +114,7 @@ void polyCNT::setInitialConfiguration()
 
     if (mdInitialiseDict_.found("bulkVelocity"))
     {
-        bulkVelocity = mdInitialiseDict_.lookup("bulkVelocity");
+        mdInitialiseDict_.readEntry("bulkVelocity", bulkVelocity);
     }
 
     bool tethered = false;
@@ -152,7 +152,7 @@ void polyCNT::setInitialConfiguration()
 
     if (mdInitialiseDict_.found("perpendicularVector"))
     {
-        tPerp = mdInitialiseDict_.lookup("perpendicularVector");
+        mdInitialiseDict_.readEntry("perpendicularVector", tPerp);
 
         tPerp /= mag(tPerp);
         rotateAboutMidAxis = true;
