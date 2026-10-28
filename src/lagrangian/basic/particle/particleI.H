@@ -172,7 +172,7 @@ inline Foam::scalar Foam::particle::movingTetLambda
     vector n0 = vector::zero;
 
     {
-        tetIndices tetIs(cellI, tetFaceI, tetPtI, mesh_);
+        tetIndices tetIs(cellI, tetFaceI, tetPtI);
 
         // tet at timestep start
         tetPointRef tet00 = tetIs.oldTet(mesh_);
@@ -673,7 +673,7 @@ inline Foam::label& Foam::particle::tetPt()
 
 inline Foam::tetIndices Foam::particle::currentTetIndices() const
 {
-    return tetIndices(cellI_, tetFaceI_, tetPtI_, mesh_);
+    return tetIndices(cellI_, tetFaceI_, tetPtI_);
 }
 
 

@@ -463,15 +463,7 @@ Foam::scalar Foam::particle::trackToFace
 
             // Set the faceHitTetIs to those for the current tet in case a
             // wall interaction is required with the cell face
-            faceHitTetIs = tetIndices
-            (
-                cellI_,
-                tetFaceI_,
-                tetBasePtI,
-                fPtAI,
-                fPtBI,
-                tetPtI_
-            );
+            faceHitTetIs = tetIndices(cellI_, tetFaceI_, tetPtI_);
         }
         else if (triI > 0)
         {
@@ -983,15 +975,7 @@ Foam::scalar Foam::particle::trackToFace
 
                 // Set the faceHitTetIs to those for the current tet in case a
                 // wall interaction is required with the cell face
-                faceHitTetIs = tetIndices
-                (
-                    cellI_,
-                    tetFaceI_,
-                    tetBasePtI,
-                    fPtAI,
-                    fPtBI,
-                    tetPtI_
-                );
+                faceHitTetIs = tetIndices(cellI_, tetFaceI_, tetPtI_);
             }
             else if (triI > 0)
             {
@@ -1315,7 +1299,7 @@ void Foam::particle::hitWallFaces
                     toPlusRNHat,
                     0,
                     n,
-                    f[tetIs.faceBasePt()],
+                    tetIs.faceTriIs(mesh_)[0],
                     cellI_,
                     fI,
                     tetIs.tetPt(),
@@ -1342,7 +1326,7 @@ void Foam::particle::hitWallFaces
                     toPlusRNHat,
                     0,
                     n,
-                    f[tetIs.faceBasePt()],
+                    tetIs.faceTriIs(mesh_)[0],
                     cellI_,
                     fI,
                     tetIs.tetPt(),
