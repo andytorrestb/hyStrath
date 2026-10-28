@@ -250,8 +250,7 @@ public:
 
 
 //- Data associated with boundedBox type are contiguous
-template<>
-inline bool contiguous<boundedBox>() {return contiguous<point>();}
+template<> struct is_contiguous<boundedBox> : is_contiguous<point> {};
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
