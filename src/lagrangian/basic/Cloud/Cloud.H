@@ -316,9 +316,8 @@ public:
             //  Only writes the cloud file if the Cloud isn't empty
             virtual bool writeObject
             (
-                IOstream::streamFormat fmt,
-                IOstream::versionNumber ver,
-                IOstream::compressionType cmp
+                IOstreamOption streamOpt,
+                const bool writeOnProc
             ) const;
 
             //- Write positions to \<cloudName\>_positions.obj file

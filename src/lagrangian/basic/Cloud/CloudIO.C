@@ -100,9 +100,8 @@ void Foam::Cloud<ParticleType>::writeCloudUniformProperties() const
 
     uniformPropsDict.writeObject
     (
-        IOstream::ASCII,
-        IOstream::currentVersion,
-        time().writeCompression()
+        IOstreamOption(IOstreamOption::ASCII, time().writeCompression()),
+        true
     );
 }
 
@@ -292,9 +291,8 @@ void Foam::Cloud<ParticleType>::writeFields() const
 template<class ParticleType>
 bool Foam::Cloud<ParticleType>::writeObject
 (
-    IOstream::streamFormat fmt,
-    IOstream::versionNumber ver,
-    IOstream::compressionType cmp
+    IOstreamOption streamOpt,
+    const bool writeOnProc
 ) const
 {
     writeCloudUniformProperties();
@@ -302,7 +300,7 @@ bool Foam::Cloud<ParticleType>::writeObject
     if (this->size())
     {
         writeFields();
-        return cloud::writeObject(fmt, ver, cmp);
+        return cloud::writeObject(streamOpt, writeOnProc);
     }
     else
     {

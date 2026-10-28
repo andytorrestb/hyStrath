@@ -488,7 +488,7 @@ void dsmcBinsMethod::writeOut()
         IOstream::versionNumber ver = time_.time().writeVersion();
         IOstream::compressionType cmp = time_.time().writeCompression();
 
-        dict.regIOobject::writeObject(fmt, ver, cmp);
+        dict.regIOobject::writeObject(IOstreamOption(fmt, ver, cmp), true);
     }
 }
 
