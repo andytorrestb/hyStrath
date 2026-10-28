@@ -2,3 +2,10 @@
 #####################
 logInstall-*
 logSync-*
+
+# OpenFOAM build artifacts #
+############################
+lnInclude/
+**/Make/linux*/
+**/Make/darwin*/
+platforms/
