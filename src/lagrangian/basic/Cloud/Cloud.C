@@ -217,7 +217,7 @@ void Foam::Cloud<ParticleType>::move(TrackData& td, const scalar trackTime)
     const labelList& procPatchNeighbours = pData.processorPatchNeighbours();
 
     // Which processors this processor is connected to
-    const labelList& neighbourProcs = pData[Pstream::myProcNo()];
+    const labelList& neighbourProcs = pData.topology().procNeighbours();
 
     // Indexing from the processor number into the neighbourProcs list
     labelList neighbourProcIndices(Pstream::nProcs(), -1);
