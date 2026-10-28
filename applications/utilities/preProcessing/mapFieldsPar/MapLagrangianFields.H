@@ -110,7 +110,7 @@ void MapLagrangianFields
 
             // Map - use CompactIOField to automatically write in
             // compact form for binary format.
-            CompactIOField<Field<Type>, Type> fieldTarget
+            CompactIOField<Field<Type>> fieldTarget
             (
                 IOobject
                 (
@@ -147,7 +147,7 @@ void MapLagrangianFields
 
     {
         IOobjectList fieldFields =
-            objects.lookupClass(CompactIOField<Field<Type>, Type>::typeName);
+            objects.lookupClass(CompactIOField<Field<Type>>::typeName);
 
         forAllIter(IOobjectList, fieldFields, fieldIter)
         {
@@ -156,10 +156,10 @@ void MapLagrangianFields
             Info<< "    mapping lagrangian fieldField " << fieldName << endl;
 
             // Read field (does not need mesh)
-            CompactIOField<Field<Type>, Type> fieldSource(*fieldIter());
+            CompactIOField<Field<Type>> fieldSource(*fieldIter());
 
             // Map
-            CompactIOField<Field<Type>, Type> fieldTarget
+            CompactIOField<Field<Type>> fieldTarget
             (
                 IOobject
                 (

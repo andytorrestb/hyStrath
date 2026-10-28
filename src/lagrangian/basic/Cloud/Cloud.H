@@ -298,7 +298,7 @@ public:
             void checkFieldFieldIOobject
             (
                 const Cloud<ParticleType>& c,
-                const CompactIOField<Field<DataType>, DataType>& data
+                const CompactIOField<Field<DataType>>& data
             ) const;
 
             //- Read the field data for the cloud of particles. Dummy at

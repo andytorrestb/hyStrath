@@ -110,7 +110,7 @@ public:
             const IOobjectList& lagrangianObjects,
             PtrList
             <
-                PtrList<CompactIOField<Field<Type>, Type>>
+                PtrList<CompactIOField<Field<Type>>>
             >& lagrangianFields
         );
 
@@ -124,10 +124,10 @@ public:
         ) const;
 
         template<class Type>
-        tmp<CompactIOField<Field<Type>, Type>> decomposeFieldField
+        tmp<CompactIOField<Field<Type>>> decomposeFieldField
         (
             const word& cloudName,
-            const CompactIOField<Field<Type>, Type>& field
+            const CompactIOField<Field<Type>>& field
         ) const;
 
 
