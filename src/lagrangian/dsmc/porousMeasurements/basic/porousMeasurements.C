@@ -73,7 +73,7 @@ Foam::porousMeasurements::New
         );
 
     porousMeasurementModel = "dsmc"
-        + static_cast<word>(std::toupper(porousMeasurementModel[0]))
+        + std::string(1, char(std::toupper(porousMeasurementModel[0])))
         + porousMeasurementModel.substr(1) + "PorousMediumMeasurements";
 
     Info<< "Selecting the porous measurement model:" << tab

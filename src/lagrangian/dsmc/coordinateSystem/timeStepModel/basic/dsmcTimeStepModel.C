@@ -103,7 +103,7 @@ Foam::dsmcTimeStepModel::New
             "constant"
         );
 
-    timeStepModel = "dsmc" + static_cast<word>(std::toupper(timeStepModel[0]))
+    timeStepModel = "dsmc" + std::string(1, char(std::toupper(timeStepModel[0])))
         + timeStepModel.substr(1) + "TimeStepModel";
 
     Info<< "Selecting the time-step model:" << tab << timeStepModel
