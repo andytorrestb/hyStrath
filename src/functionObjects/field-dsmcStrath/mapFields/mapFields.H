@@ -97,7 +97,7 @@ class mapFields
         autoPtr<meshToMesh> interpPtr_;
 
         //- List of field names to interpolate
-        wordReList fieldNames_;
+        wordRes fieldNames_;
 
 
     // Private Member Functions

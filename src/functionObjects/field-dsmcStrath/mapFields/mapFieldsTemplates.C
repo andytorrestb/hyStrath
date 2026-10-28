@@ -122,7 +122,7 @@ bool Foam::functionObjects::mapFields::writeFieldType() const
     const fvMesh& mapRegion = mapRegionPtr_();
 
     wordList fieldNames(this->mesh_.names(VolFieldType::typeName));
-    labelList selected = findStrings(fieldNames_, fieldNames);
+    labelList selected = fieldNames_.matching(fieldNames);
     forAll(selected, i)
     {
         const word& fieldName = fieldNames[selected[i]];
