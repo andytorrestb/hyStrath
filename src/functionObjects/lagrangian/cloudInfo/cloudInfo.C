@@ -148,7 +148,7 @@ bool Foam::functionObjects::cloudInfo::write()
 
         if (writeToFile())
         {
-            writeTime(files(i));
+            writeCurrentTime(files(i));
             files(i)
                 << token::TAB
                 << nParcels << token::TAB
