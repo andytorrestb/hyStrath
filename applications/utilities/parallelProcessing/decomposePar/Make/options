@@ -10,7 +10,7 @@ EXE_INC = \
 EXE_LIBS = \
     -L$(FOAM_USER_LIBBIN) \
     -ldynamicMesh \
-    -ldecompose \
+    -ldecompose+ \
     -llagrangian+ \
     -lgenericPatchFields \
     -ldecompositionMethods -L$(FOAM_LIBBIN)/dummy -lmetisDecomp -lscotchDecomp \

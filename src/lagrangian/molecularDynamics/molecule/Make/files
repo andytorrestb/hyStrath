@@ -6,4 +6,4 @@ molecule/moleculeIO.C
 
 moleculeCloud/moleculeCloud.C
 
-LIB = $(FOAM_USER_LIBBIN)/libmolecule
+LIB = $(FOAM_USER_LIBBIN)/libmolecule+

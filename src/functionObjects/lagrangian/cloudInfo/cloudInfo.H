@@ -40,7 +40,7 @@ Usage
     cloudInfo1
     {
         type        cloudInfo;
-        libs        ("liblagrangianFunctionObjects.so");
+        libs        ("liblagrangianFunctionObjects+.so");
         ...
         clouds
         (

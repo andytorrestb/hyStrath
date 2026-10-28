@@ -13,5 +13,5 @@ EXE_LIBS = \
     -llagrangian+ \
     -ldynamicMesh \
     -lmeshTools \
-    -lreconstruct \
+    -lreconstruct+ \
     -lregionModels

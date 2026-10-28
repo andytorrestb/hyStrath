@@ -41,7 +41,7 @@ Usage
     dsmcFields1
     {
         type        dsmcFields;
-        libs        ("liblagrangianFunctionObjects.so");
+        libs        ("liblagrangianFunctionObjects+.so");
         ...
     }
     \endverbatim

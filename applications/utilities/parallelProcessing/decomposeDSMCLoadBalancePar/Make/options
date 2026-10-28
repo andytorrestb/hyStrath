@@ -8,7 +8,7 @@ EXE_INC = \
 
 EXE_LIBS = \
     -L$(FOAM_USER_LIBBIN) \
-    -ldecompose \
+    -ldecompose+ \
     -llagrangian+ \
     -lgenericPatchFields \
     -ldecompositionMethods -L$(FOAM_LIBBIN)/dummy -lmetisDecomp -lscotchDecomp \

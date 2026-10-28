@@ -11,6 +11,6 @@ EXE_LIBS = \
     -lmeshTools \
     -lfiniteVolume \
     -llagrangian+ \
-    -lmolecule \
-    -lpotential \
-    -lmolecularMeasurements
+    -lmolecule+ \
+    -lpotential+ \
+    -lmolecularMeasurements+

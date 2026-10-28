@@ -44,4 +44,4 @@ electrostaticPotential = electrostaticPotential
 
 $(electrostaticPotential)/electrostaticPotential.C
 
-LIB = $(FOAM_USER_LIBBIN)/libpotential
+LIB = $(FOAM_USER_LIBBIN)/libpotential+

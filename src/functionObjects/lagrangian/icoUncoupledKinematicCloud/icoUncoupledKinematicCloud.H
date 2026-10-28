@@ -48,7 +48,7 @@ Usage
     \verbatim
         tracks
         {
-            libs        ("liblagrangianFunctionObjects.so");
+            libs        ("liblagrangianFunctionObjects+.so");
             type        icoUncoupledKinematicCloud;
         }
     \endverbatim

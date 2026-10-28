@@ -12,5 +12,5 @@ EXE_LIBS = \
     -lmeshTools \
     -llagrangian+ \
     -lfiniteVolume \
-    -ldecompose \
+    -ldecompose+ \
     -lgenericPatchFields

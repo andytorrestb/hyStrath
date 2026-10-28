@@ -10,6 +10,6 @@ LIB_LIBS = \
     -lfiniteVolume \
     -lmeshTools \
     -llagrangian+ \
-    -lpotential \
-    -lmolecularMeasurements
+    -lpotential+ \
+    -lmolecularMeasurements+
 
