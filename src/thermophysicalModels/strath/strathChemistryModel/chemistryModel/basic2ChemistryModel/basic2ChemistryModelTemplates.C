@@ -111,7 +111,7 @@ Foam::autoPtr<ChemistryModel> Foam::basic2ChemistryModel::New
           + word(chemistryTypeDict.lookup("chemistryThermo")) + ','
           + thermoTypeName + ">";
 
-        typename ChemistryModel::fvMeshConstructorTable::iterator cstrIter =
+        typename ChemistryModel::fvMeshConstructorTableType::iterator cstrIter =
             ChemistryModel::fvMeshConstructorTablePtr_->find(chemistryTypeName);
 
         if (cstrIter == ChemistryModel::fvMeshConstructorTablePtr_->end())
@@ -167,7 +167,7 @@ Foam::autoPtr<ChemistryModel> Foam::basic2ChemistryModel::New
 
         Info<< "Selecting chemistry type " << chemistryTypeName << endl;
 
-        typename ChemistryModel::fvMeshConstructorTable::iterator cstrIter =
+        typename ChemistryModel::fvMeshConstructorTableType::iterator cstrIter =
             ChemistryModel::fvMeshConstructorTablePtr_->find(chemistryTypeName);
 
         if (cstrIter == ChemistryModel::fvMeshConstructorTablePtr_->end())

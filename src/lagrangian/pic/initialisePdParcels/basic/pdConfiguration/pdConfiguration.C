@@ -75,7 +75,7 @@ autoPtr<pdConfiguration> pdConfiguration::New
     Info<< "Selecting pdConfiguration "
          << pdConfigurationName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdConfigurationName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

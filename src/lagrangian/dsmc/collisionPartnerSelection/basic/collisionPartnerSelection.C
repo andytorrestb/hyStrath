@@ -76,7 +76,7 @@ autoPtr<collisionPartnerSelection> collisionPartnerSelection::New
     Info<< "Selecting collisionPartnerSelectionModel "
          << collisionPartnerSelectionName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(collisionPartnerSelectionName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

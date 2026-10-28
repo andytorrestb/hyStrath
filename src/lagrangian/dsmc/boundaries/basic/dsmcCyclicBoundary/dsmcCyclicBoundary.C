@@ -270,7 +270,7 @@ autoPtr<dsmcCyclicBoundary> dsmcCyclicBoundary::New
     Info<< "Selecting dsmcCyclicBoundaryModel "
          << dsmcCyclicBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcCyclicBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -110,7 +110,7 @@ autoPtr<polyFluxController> polyFluxController::New
     Info<< "Selecting fluxController "
          << polyFluxControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyFluxControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

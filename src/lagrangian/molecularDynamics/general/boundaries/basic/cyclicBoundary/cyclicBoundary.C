@@ -168,7 +168,7 @@ autoPtr<cyclicBoundary> cyclicBoundary::New
     Info<< "Selecting cyclicBoundaryModel "
          << cyclicBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(cyclicBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

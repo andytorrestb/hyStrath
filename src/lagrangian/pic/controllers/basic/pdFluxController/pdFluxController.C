@@ -112,7 +112,7 @@ autoPtr<pdFluxController> pdFluxController::New
     Info<< "Selecting fluxController "
          << pdFluxControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdFluxControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

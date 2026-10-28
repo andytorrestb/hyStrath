@@ -110,7 +110,7 @@ Foam::autoPtr<Foam::binaryDiffusionModel> Foam::binaryDiffusionModel::New
             ).back();
     }
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find
         (
             binaryDiffusionModelTypeName

@@ -71,7 +71,7 @@ autoPtr<polyConfiguration> polyConfiguration::New
     Info<< "Selecting polyConfiguration "
          << polyConfigurationName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyConfigurationName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

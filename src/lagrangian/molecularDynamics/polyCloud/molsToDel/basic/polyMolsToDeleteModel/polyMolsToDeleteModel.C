@@ -67,7 +67,7 @@ autoPtr<polyMolsToDeleteModel> polyMolsToDeleteModel::New
     Info<< "Selecting model "
          << polyMolsToDeleteModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyMolsToDeleteModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

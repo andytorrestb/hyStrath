@@ -466,7 +466,7 @@ Foam::Reaction2<Reaction2Thermo>::New
 
     const word reactionTypeName(is);
 
-    typename IstreamConstructorTable::iterator cstrIter
+    typename IstreamConstructorTableType::iterator cstrIter
         = IstreamConstructorTablePtr_->find(reactionTypeName);
 
     if (cstrIter == IstreamConstructorTablePtr_->end())
@@ -501,7 +501,7 @@ Foam::Reaction2<Reaction2Thermo>::New
 {
     const word& reactionTypeName = dict.get<word>("type");
 
-    typename dictionaryConstructorTable::iterator cstrIter
+    typename dictionaryConstructorTableType::iterator cstrIter
         = dictionaryConstructorTablePtr_->find(reactionTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -73,7 +73,7 @@ autoPtr<threeDimBinModel> threeDimBinModel::New
     Info<< "Selecting threeDimBinModel "
          << threeDimBinModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(threeDimBinModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

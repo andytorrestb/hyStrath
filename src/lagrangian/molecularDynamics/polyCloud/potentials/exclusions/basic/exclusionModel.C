@@ -79,7 +79,7 @@ autoPtr<exclusionModel> exclusionModel::New
     Info<< "Selecting exclusionModel "
          << exclusionModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(exclusionModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

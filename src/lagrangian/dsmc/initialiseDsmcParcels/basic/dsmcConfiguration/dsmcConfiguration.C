@@ -75,7 +75,7 @@ autoPtr<dsmcConfiguration> dsmcConfiguration::New
     Info<< "Selecting dsmcConfiguration "
          << dsmcConfigurationName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcConfigurationName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

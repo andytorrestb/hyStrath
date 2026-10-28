@@ -106,7 +106,7 @@ autoPtr<polyCyclicBoundary> polyCyclicBoundary::New
     Info<< "Selecting polyCyclicBoundaryModel "
          << polyCyclicBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyCyclicBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

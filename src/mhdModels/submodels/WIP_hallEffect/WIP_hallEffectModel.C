@@ -62,7 +62,7 @@ hallModel::New
 
     Info<< "Selecting conductivityModel " << modelType << endl;
 
-    mhdModelConstructorTable::iterator cstrIter =
+    mhdModelConstructorTableType::iterator cstrIter =
         mhdModelConstructorTablePtr_->find(modelType);
 
     if (cstrIter == mhdModelConstructorTablePtr_->end())

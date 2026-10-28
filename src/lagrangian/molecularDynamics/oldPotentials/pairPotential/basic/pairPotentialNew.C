@@ -41,7 +41,7 @@ Foam::autoPtr<Foam::pairPotential> Foam::pairPotential::New
         << pairPotentialTypeName << " for "
         << name << " interaction." << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pairPotentialTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

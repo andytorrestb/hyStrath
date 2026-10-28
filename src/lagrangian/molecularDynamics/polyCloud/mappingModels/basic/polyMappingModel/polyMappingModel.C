@@ -67,7 +67,7 @@ autoPtr<polyMappingModel> polyMappingModel::New
     Info<< "Selecting model "
          << polyMappingModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyMappingModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

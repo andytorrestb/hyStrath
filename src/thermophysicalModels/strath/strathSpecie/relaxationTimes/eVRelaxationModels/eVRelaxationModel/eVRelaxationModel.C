@@ -72,7 +72,7 @@ Foam::autoPtr<Foam::eVRelaxationModel> Foam::eVRelaxationModel::New
 {
     word eVRelaxationModelTypeName(dict1.subDict("thermalRelaxationModels").subDict("eV").lookup("model"));
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(eVRelaxationModelTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

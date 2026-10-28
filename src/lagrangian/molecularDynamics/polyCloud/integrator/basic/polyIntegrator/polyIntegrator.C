@@ -82,7 +82,7 @@ autoPtr<polyIntegrator> polyIntegrator::New
     Info<< "Selecting polyIntegrator "
          << polyIntegratorName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyIntegratorName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -109,7 +109,7 @@ Foam::dsmcTimeStepModel::New
     Info<< "Selecting the time-step model:" << tab << timeStepModel
         << "\n" << endl;
 
-    fvMeshConstructorTable::iterator cstrIter =
+    fvMeshConstructorTableType::iterator cstrIter =
         fvMeshConstructorTablePtr_->find(timeStepModel);
 
     if (cstrIter == fvMeshConstructorTablePtr_->end())

@@ -76,7 +76,7 @@ autoPtr<pdReaction> pdReaction::New
     Info<< "Selecting the reaction model "
          << pdReactionName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdReactionName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

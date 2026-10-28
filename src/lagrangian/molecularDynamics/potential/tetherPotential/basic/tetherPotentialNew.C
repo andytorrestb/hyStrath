@@ -38,7 +38,7 @@ Foam::autoPtr<Foam::tetherPotential> Foam::tetherPotential::New
     Info<< nl << "Selecting tether potential " << potentialType
         << " for " << name << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(potentialType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

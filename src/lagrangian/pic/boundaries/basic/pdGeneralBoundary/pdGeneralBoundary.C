@@ -129,7 +129,7 @@ autoPtr<pdGeneralBoundary> pdGeneralBoundary::New
     Info<< "Selecting pdGeneralBoundaryModel "
          << pdGeneralBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdGeneralBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

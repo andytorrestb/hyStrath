@@ -51,7 +51,7 @@ Foam::hTC2Models::rho2HTCModel::New
 
     Info<< "Selecting hTC model " << hTempTypeName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(hTempTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

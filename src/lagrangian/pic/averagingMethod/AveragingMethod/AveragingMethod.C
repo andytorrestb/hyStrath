@@ -83,7 +83,7 @@ Foam::AveragingMethod<Type>::New
     /*Info<< "Selecting averaging method "
         << averageType << endl;*/
 
-    typename dictionaryConstructorTable::iterator cstrIter =
+    typename dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(averageType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

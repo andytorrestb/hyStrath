@@ -41,7 +41,7 @@ Foam::autoPtr<Foam::energyScalingFunction> Foam::energyScalingFunction::New
         << scalingType << " for "
         << name << " potential energy." << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(scalingType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

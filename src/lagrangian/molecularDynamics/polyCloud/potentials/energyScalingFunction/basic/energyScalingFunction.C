@@ -83,7 +83,7 @@ autoPtr<energyScalingFunction> energyScalingFunction::New
         << energyScalingFunctionTypeName << " for "
         << name << " potential energy." << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(energyScalingFunctionTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -36,7 +36,7 @@ Foam::rarefactionParameter::New
 {
     word mfpModelName = word("rarefied") +'<' + thermo.partialThermoName() + '>';
 
-    fvMeshConstructorTable::iterator cstrIter =
+    fvMeshConstructorTableType::iterator cstrIter =
         fvMeshConstructorTablePtr_->find(mfpModelName);
 
     Info<< "Loading the rarefaction parameters library\n" << endl;

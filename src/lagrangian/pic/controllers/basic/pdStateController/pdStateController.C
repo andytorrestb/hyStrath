@@ -117,7 +117,7 @@ autoPtr<pdStateController> pdStateController::New
     Info<< "Selecting pdStateController "
          << pdStateControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdStateControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

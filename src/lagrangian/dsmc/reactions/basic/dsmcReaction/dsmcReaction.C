@@ -126,7 +126,7 @@ autoPtr<dsmcReaction> dsmcReaction::New
     Info<< "Selecting the reaction model "
          << dsmcReactionName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcReactionName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

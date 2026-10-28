@@ -270,7 +270,7 @@ autoPtr<pdCyclicBoundary> pdCyclicBoundary::New
     Info<< "Selecting pdCyclicBoundaryModel "
          << pdCyclicBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdCyclicBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -77,7 +77,7 @@ autoPtr<pdField> pdField::New
     Info<< "Selecting field: "
          << pdFieldName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdFieldName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

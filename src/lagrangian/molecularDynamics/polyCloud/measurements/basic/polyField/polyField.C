@@ -77,7 +77,7 @@ autoPtr<polyField> polyField::New
     Info<< "Selecting field: "
          << polyFieldName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyFieldName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

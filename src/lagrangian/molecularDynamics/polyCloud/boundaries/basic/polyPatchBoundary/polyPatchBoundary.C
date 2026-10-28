@@ -122,7 +122,7 @@ autoPtr<polyPatchBoundary> polyPatchBoundary::New
     Info<< "Selecting polyPatchBoundaryModel "
          << polyPatchBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyPatchBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

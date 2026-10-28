@@ -70,7 +70,7 @@ autoPtr<molsToDeleteModel> molsToDeleteModel::New
     Info<< "Selecting molsToDeleteModel "
          << molsToDeleteModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(molsToDeleteModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

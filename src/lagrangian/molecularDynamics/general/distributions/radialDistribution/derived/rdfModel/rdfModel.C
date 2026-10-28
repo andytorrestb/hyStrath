@@ -67,7 +67,7 @@ autoPtr<rdfModel> rdfModel::New
     Info<< "Selecting rdf function model: "
          << rdfModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(rdfModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

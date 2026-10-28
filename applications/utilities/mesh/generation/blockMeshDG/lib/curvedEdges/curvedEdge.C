@@ -88,7 +88,7 @@ Foam::autoPtr<Foam::curvedEdge> Foam::curvedEdge::New
 
     const word edgeType(is);
 
-    IstreamConstructorTable::iterator cstrIter =
+    IstreamConstructorTableType::iterator cstrIter =
         IstreamConstructorTablePtr_->find(edgeType);
 
     if (cstrIter == IstreamConstructorTablePtr_->end())

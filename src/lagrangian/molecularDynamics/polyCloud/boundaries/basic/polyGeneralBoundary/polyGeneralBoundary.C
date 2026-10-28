@@ -115,7 +115,7 @@ autoPtr<polyGeneralBoundary> polyGeneralBoundary::New
     Info<< "Selecting polyGeneralBoundaryModel "
          << polyGeneralBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyGeneralBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

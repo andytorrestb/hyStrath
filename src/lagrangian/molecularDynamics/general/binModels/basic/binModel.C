@@ -74,7 +74,7 @@ autoPtr<binModel> binModel::New
     Info<< "Selecting binModel "
          << binModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(binModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

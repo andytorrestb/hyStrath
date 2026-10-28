@@ -140,7 +140,7 @@ autoPtr<pairPotentialModel> pairPotentialModel::New
     Info<< "Selecting model: "
          << pairPotentialModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pairPotentialModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

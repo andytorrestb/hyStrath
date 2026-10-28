@@ -76,7 +76,7 @@ autoPtr<gravityForce> gravityForce::New
     Info<< "Selecting gravity-force model "
          << gravityForceName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(gravityForceName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

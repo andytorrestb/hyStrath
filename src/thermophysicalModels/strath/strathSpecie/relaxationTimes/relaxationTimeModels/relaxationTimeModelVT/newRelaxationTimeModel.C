@@ -63,7 +63,7 @@ Foam::relaxationTimeModel::New
             << endl;
     }
 
-    fvMeshConstructorTable::iterator cstrIter =
+    fvMeshConstructorTableType::iterator cstrIter =
         fvMeshConstructorTablePtr_->find(VTModelName);
 
     if (cstrIter == fvMeshConstructorTablePtr_->end())

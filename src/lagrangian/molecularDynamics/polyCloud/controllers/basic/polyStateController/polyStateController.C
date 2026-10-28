@@ -97,7 +97,7 @@ autoPtr<polyStateController> polyStateController::New
     Info<< "Selecting polyStateController "
          << polyStateControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(polyStateControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

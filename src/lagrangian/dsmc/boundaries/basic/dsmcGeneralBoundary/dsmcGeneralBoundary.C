@@ -126,7 +126,7 @@ autoPtr<dsmcGeneralBoundary> dsmcGeneralBoundary::New
     Info<< "Selecting dsmcGeneralBoundaryModel "
          << dsmcGeneralBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcGeneralBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -66,7 +66,7 @@ Foam::autoPtr<Foam::BinaryCollisionModel> Foam::BinaryCollisionModel::New
 
     Info<< "Selecting BinaryCollisionModel " << modelType << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(modelType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

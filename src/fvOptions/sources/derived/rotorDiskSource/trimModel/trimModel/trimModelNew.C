@@ -37,7 +37,7 @@ Foam::autoPtr<Foam::trimModel> Foam::trimModel::New
 
     Info<< "    Selecting " << typeName << " " << modelType << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(modelType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

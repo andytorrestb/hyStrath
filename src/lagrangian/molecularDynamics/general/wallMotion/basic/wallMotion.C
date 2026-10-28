@@ -74,7 +74,7 @@ autoPtr<wallMotion> wallMotion::New
     Info<< "Selecting wallMotion "
          << wallMotionName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(wallMotionName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

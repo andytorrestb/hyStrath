@@ -76,7 +76,7 @@ autoPtr<tether> tether::New
     Info<< "Selecting tether-force model "
          << tetherName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(tetherName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

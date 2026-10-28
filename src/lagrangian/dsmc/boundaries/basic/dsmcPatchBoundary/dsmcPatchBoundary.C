@@ -143,7 +143,7 @@ autoPtr<dsmcPatchBoundary> dsmcPatchBoundary::New
     Info<< "Selecting dsmcPatchBoundaryModel "
          << dsmcPatchBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcPatchBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

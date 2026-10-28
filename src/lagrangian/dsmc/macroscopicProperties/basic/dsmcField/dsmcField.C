@@ -77,7 +77,7 @@ autoPtr<dsmcField> dsmcField::New
     Info<< "Selecting field: "
          << dsmcFieldName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcFieldName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

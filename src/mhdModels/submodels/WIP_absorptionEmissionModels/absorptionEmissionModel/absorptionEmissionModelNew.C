@@ -39,7 +39,7 @@ Foam::radiation::absorptionEmissionModel::New
 
     Info<< "Selecting absorptionEmissionModel " << modelType << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(modelType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -112,7 +112,7 @@ autoPtr<dsmcFluxController> dsmcFluxController::New
     Info<< "Selecting fluxController "
          << dsmcFluxControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcFluxControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

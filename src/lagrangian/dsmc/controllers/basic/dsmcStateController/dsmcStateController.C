@@ -117,7 +117,7 @@ autoPtr<dsmcStateController> dsmcStateController::New
     Info<< "Selecting dsmcStateController "
          << dsmcStateControllerName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(dsmcStateControllerName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

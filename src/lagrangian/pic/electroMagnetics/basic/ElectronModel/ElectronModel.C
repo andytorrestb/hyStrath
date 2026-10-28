@@ -69,7 +69,7 @@ Foam::autoPtr<Foam::ElectronModel> Foam::ElectronModel::New
 
     Info<< "Selecting ElectronModel " << modelType << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(modelType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -79,7 +79,7 @@ Foam::autoPtr<Foam::profileModel> Foam::profileModel::New
 
     Info<< "    - creating " << modelType << " profile " << modelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(modelType);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

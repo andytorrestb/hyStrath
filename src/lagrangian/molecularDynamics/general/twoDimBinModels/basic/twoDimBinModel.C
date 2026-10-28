@@ -73,7 +73,7 @@ autoPtr<twoDimBinModel> twoDimBinModel::New
     Info<< "Selecting twoDimBinModel "
          << twoDimBinModelName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(twoDimBinModelName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -45,7 +45,7 @@ Foam::chemistry2Reader<ThermoType>::New
 
     Info<< "Selecting chemistry2Reader " << chemistry2ReaderTypeName << endl;
 
-    typename dictionaryConstructorTable::iterator cstrIter =
+    typename dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(chemistry2ReaderTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

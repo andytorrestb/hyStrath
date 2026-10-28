@@ -142,7 +142,7 @@ autoPtr<pdPatchBoundary> pdPatchBoundary::New
     Info<< "Selecting pdPatchBoundaryModel "
          << pdPatchBoundaryName << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(pdPatchBoundaryName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -44,7 +44,7 @@ Foam::autoPtr<Foam::tetherPotential> Foam::tetherPotential::New
         << tetherPotentialTypeName << " for "
         << name << endl;
 
-    dictionaryConstructorTable::iterator cstrIter =
+    dictionaryConstructorTableType::iterator cstrIter =
         dictionaryConstructorTablePtr_->find(tetherPotentialTypeName);
 
     if (cstrIter == dictionaryConstructorTablePtr_->end())

@@ -85,7 +85,7 @@ Foam::dsmcCoordinateSystem::New
     Info<< "Selecting the coordinate system model:" << tab << coordSystem
         << "\n" << endl;
 
-    fvMeshConstructorTable::iterator cstrIter =
+    fvMeshConstructorTableType::iterator cstrIter =
         fvMeshConstructorTablePtr_->find(coordSystem);
 
     if (cstrIter == fvMeshConstructorTablePtr_->end())

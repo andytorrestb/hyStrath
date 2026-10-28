@@ -79,7 +79,7 @@ Foam::porousMeasurements::New
     Info<< "Selecting the porous measurement model:" << tab
         << porousMeasurementModel << "\n" << endl;
 
-    fvMeshConstructorTable::iterator cstrIter =
+    fvMeshConstructorTableType::iterator cstrIter =
         fvMeshConstructorTablePtr_->find(porousMeasurementModel);
 
     if (cstrIter == fvMeshConstructorTablePtr_->end())
