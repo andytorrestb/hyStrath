@@ -852,7 +852,7 @@ void Foam::InteractionLists<ParticleType>::buildMap
 
     sendSizes[Pstream::myProcNo()] = nSend;
 
-    combineReduce(sendSizes, UPstream::listEq());
+    Pstream::allGatherList(sendSizes);
 
     // 2. Size sendMap
     labelListList sendMap(Pstream::nProcs());
